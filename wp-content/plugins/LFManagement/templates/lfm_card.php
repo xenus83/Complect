@@ -1,13 +1,11 @@
-<?php
-wp_nonce_field( plugin_basename( __FILE__ ), 'lfm_card_noncenamenoncename' );?>
 
 <p>
 <div class="row">
     <div class="col-25">
-        <label for="lfm_card__isbn">ISBN</label>
+        <label for="lfm_card__isbn" class="lfm_meta_box__label">ISBN</label>
     </div>
     <div class="col-75">
-		<input type="text" name="lfm_card__isbn"
+		<input type="text" name="lfm_card__isbn" class="lfm_meta_box__input"
 		       id="isbn" value="<?php echo $isbn; ?>" />
     </div>
 </div>

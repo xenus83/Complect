@@ -1,0 +1,214 @@
+2023-03-22 17:37:15 Запись в лог register script
+2023-03-22 17:37:35 Запись в лог register script
+$_POST
+1f63a64d72
+1f63a64d72
+post
+post
+Array
+(
+    [_wpnonce] => c7af2a2fd3
+    [_wp_http_referer] => /wp-admin/post.php?post=98&action=edit&message=1
+    [user_ID] => 1
+    [action] => editpost
+    [originalaction] => editpost
+    [post_author] => 1
+    [post_type] => lfm_card
+    [original_post_status] => publish
+    [referredby] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [post_ID] => 98
+    [meta-box-order-nonce] => 0a28bd8d84
+    [closedpostboxesnonce] => af3581d587
+    [post_title] => тест1
+    [samplepermalinknonce] => f62e68e2ee
+    [wp-preview] => 
+    [hidden_post_status] => publish
+    [post_status] => publish
+    [hidden_post_password] => 
+    [hidden_post_visibility] => public
+    [visibility] => public
+    [post_password] => 
+    [mm] => 03
+    [jj] => 03
+    [aa] => 2023
+    [hh] => 01
+    [mn] => 29
+    [ss] => 06
+    [hidden_mm] => 03
+    [cur_mm] => 03
+    [hidden_jj] => 03
+    [cur_jj] => 29
+    [hidden_aa] => 2023
+    [cur_aa] => 2023
+    [hidden_hh] => 01
+    [cur_hh] => 03
+    [hidden_mn] => 29
+    [cur_mn] => 43
+    [original_publish] => Обновить
+    [save] => Обновить
+    [lfm_card_age_rating)] => 6+
+    [post_name] => тест1
+    [lfm_card_noncenamenoncename] => e23c4fe95d
+    [lfm_card__isbn] => 1221
+    [lfm_card__year] => 2024
+    [lfm_card__cost] => 123
+    [lfm_card__title_info] => тест заголовка
+    [lfm_card__volume_p] => 1
+    [lfm_card__otv_info] => отв
+    [lfm_card__izd_info] => изд
+    [lfm_card__publishing_place] => М.
+    [lfm_card__publishing_house] => Самовар
+    [lfm_card__sys] => треб
+    [lfm_card__osnzaglser] => сер
+    [lfm_card__note] => Примечание
+    [lfm_card__resume] => содержание
+    [members_cp_meta] => 5913dbda79
+    [members_access_error] => 
+    [post_mime_type] => 
+    [ID] => 98
+    [comment_status] => closed
+    [ping_status] => closed
+)
+
+Array
+(
+    [_wpnonce] => c7af2a2fd3
+    [_wp_http_referer] => /wp-admin/post.php?post=98&action=edit&message=1
+    [user_ID] => 1
+    [action] => editpost
+    [originalaction] => editpost
+    [post_author] => 1
+    [post_type] => lfm_card
+    [original_post_status] => publish
+    [referredby] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [post_ID] => 98
+    [meta-box-order-nonce] => 0a28bd8d84
+    [closedpostboxesnonce] => af3581d587
+    [post_title] => тест1
+    [samplepermalinknonce] => f62e68e2ee
+    [wp-preview] => 
+    [hidden_post_status] => publish
+    [post_status] => publish
+    [hidden_post_password] => 
+    [hidden_post_visibility] => public
+    [visibility] => public
+    [post_password] => 
+    [mm] => 03
+    [jj] => 03
+    [aa] => 2023
+    [hh] => 01
+    [mn] => 29
+    [ss] => 06
+    [hidden_mm] => 03
+    [cur_mm] => 03
+    [hidden_jj] => 03
+    [cur_jj] => 29
+    [hidden_aa] => 2023
+    [cur_aa] => 2023
+    [hidden_hh] => 01
+    [cur_hh] => 03
+    [hidden_mn] => 29
+    [cur_mn] => 45
+    [original_publish] => Обновить
+    [save] => Обновить
+    [lfm_card_age_rating)] => 6+
+    [post_name] => тест1
+    [lfm_card_noncenamenoncename] => e23c4fe95d
+    [lfm_card__isbn] => 1221
+    [lfm_card__year] => 2024
+    [lfm_card__cost] => 123
+    [lfm_card__title_info] => тест заголовка
+    [lfm_card__volume_p] => 1
+    [lfm_card__otv_info] => отв
+    [lfm_card__izd_info] => изд
+    [lfm_card__publishing_place] => М.
+    [lfm_card__publishing_house] => Самовар
+    [lfm_card__sys] => треб
+    [lfm_card__osnzaglser] => сер
+    [lfm_card__note] => Примечание
+    [lfm_card__resume] => содержание
+    [members_cp_meta] => 5913dbda79
+    [members_access_error] => 
+    [post_mime_type] => 
+    [ID] => 98
+    [comment_status] => closed
+    [ping_status] => closed
+)
+
+Array
+(
+    [_wpnonce] => c7af2a2fd3
+    [_wp_http_referer] => /wp-admin/post.php?post=98&action=edit
+    [user_ID] => 1
+    [action] => editpost
+    [originalaction] => editpost
+    [post_author] => 1
+    [post_type] => lfm_card
+    [original_post_status] => publish
+    [referredby] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-admin/post.php?post=98&action=edit
+    [post_ID] => 98
+    [meta-box-order-nonce] => 0a28bd8d84
+    [closedpostboxesnonce] => af3581d587
+    [post_title] => тест1
+    [samplepermalinknonce] => f62e68e2eeя
+    [wp-preview] => 
+    [hidden_post_status] => publish
+    [post_status] => publish
+    [hidden_post_password] => 
+    [hidden_post_visibility] => public
+    [visibility] => public
+    [post_password] => 
+    [mm] => 03
+    [jj] => 03
+    [aa] => 2023
+    [hh] => 01
+    [mn] => 29
+    [ss] => 06
+    [hidden_mm] => 03
+    [cur_mm] => 03
+    [hidden_jj] => 03
+    [cur_jj] => 29
+    [hidden_aa] => 2023
+    [cur_aa] => 2023
+    [hidden_hh] => 01
+    [cur_hh] => 03
+    [hidden_mn] => 29
+    [cur_mn] => 57
+    [original_publish] => Обновить
+    [save] => Обновить
+    [lfm_card_age_rating] => 6+
+    [post_name] => тест1
+    [lfm_card_noncenamenoncename] => e23c4fe95d
+    [lfm_card__isbn] => 1221
+    [lfm_card__year] => 2024
+    [lfm_card__cost] => 123
+    [lfm_card__title_info] => тест заголовка
+    [lfm_card__volume_p] => 1
+    [lfm_card__otv_info] => отв
+    [lfm_card__izd_info] => изд
+    [lfm_card__publishing_place] => М.
+    [lfm_card__publishing_house] => Самовар
+    [lfm_card__sys] => треб
+    [lfm_card__osnzaglser] => сер
+    [lfm_card__note] => Примечание
+    [lfm_card__resume] => содержание
+    [members_cp_meta] => 5913dbda79
+    [members_access_error] => 
+    [post_mime_type] => 
+    [ID] => 98
+    [comment_status] => closed
+    [ping_status] => closed
+)
+var1:\n
+lfm_card_item_type
+var1:
+lfm_card_item_type
+args:
+Array
+(
+    [0] => lfm_card_item_type
+)
+

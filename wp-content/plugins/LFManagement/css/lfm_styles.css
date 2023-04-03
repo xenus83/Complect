@@ -1,5 +1,5 @@
 /* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
+input[type=text].lfm_meta_box__input, select.lfm_meta_box__input, textarea.lfm_meta_box__input{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -9,13 +9,13 @@ input[type=text], select, textarea{
 }
 
 /* Style the label to display next to the inputs */
-label {
+label.lfm_meta_box__label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
 /* Style the submit button */
-input[type=submit] {
+input[type=submit].lfm_meta_box__input_submit {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -44,7 +44,6 @@ input[type=submit] {
     float: left;
     width: 75%;
     margin-top: 6px;
-    background-color: #0c88b4;
 }
 
 /* Clear floats after the columns */
@@ -56,7 +55,7 @@ input[type=submit] {
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
+    .col-25, .col-75, input[type=submit].lfm_meta_box__input_submit {
         width: 100%;
         margin-top: 0;
     }

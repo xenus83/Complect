@@ -38,15 +38,37 @@ class LFManagement
 
 	function __construct() {
 		add_action( 'init', [$this,'lfm_register_script']);
-		add_action( 'admin_menu', [$this,'add_lfm_menu_page']);
 		add_action( 'init',[$this, 'create_data_types']);
+		add_action( 'admin_menu', [$this,'add_lfm_menu_page']);
+		add_action( 'init', [$this,'lfm_card_taxonomies'] );
 		add_action( 'add_meta_boxes_lfm_card', [$this, 'add_card_meta_box'] );
 		add_action( 'save_post_lfm_card', [$this, 'lfm_card_post_data__save'] );
-		add_action( 'init', [$this,'lfm_card_taxonomies'] );
 		add_action( 'wp_enqueue_scripts',[$this,'lfm_enqueue_css']);
 		add_action( 'admin_enqueue_scripts',[$this,'lfm_enqueue_css']);
+		add_action('lfm_card_item_type_edit_form_fields ',[$this,'lfm_fnc']);
+		add_action('lfm_card_item_type_add_form_fields',[$this,'lfm_fnc']);
 	}
 
+	protected array $data_structure = [
+		'lfm_card'=>
+			[
+				'taxonomies'=>
+				[
+					'lfm_card_item_type'=>
+					[
+						'labels' => [
+							 'name' => 'Вид изделия'
+							,'singular_name' => 'Вид изделия'
+						]
+						,'fields' =>[
+							'lfm_card_item_type__acc_unit' =>[
+							'type' => 'string'
+							]
+						]
+					]
+				]
+			]
+	];
 	static function activation() : void {
 		flush_rewrite_rules();
 	}
@@ -60,10 +82,21 @@ class LFManagement
 	}
 	function lfm_enqueue_css() : void{
 		$log = date('Y-m-d H:i:s') . ' Запись в лог lfm_enqueue_css script';
-		file_put_contents(__DIR__ . '/log.log', $log . PHP_EOL, FILE_APPEND);
+		//file_put_contents(__DIR__ . '/log.log', $log . PHP_EOL, FILE_APPEND);
 		wp_enqueue_style('lfm_styles');
 
 
+	}
+	static function lfm_render_term_meta_fields__div($var1) : void{
+
+	}
+	static function lfm_render_term_meta_fields__tr($var1) : void{
+
+	}
+	static function lfm_render_term_meta_fields($taxonomy, $input_view) : void {
+		$taxonomy = get_taxonomy($taxonomy);
+		if(!$taxonomy) die("задано неверное имя таксономии для вывода атрибутов");
+		$meta_feilds = wp_get_regist();
 	}
 	function render_lfm_page() : void {
 		echo "<h1>Настройка плагина lfm Plugin</h1>";
@@ -80,9 +113,9 @@ class LFManagement
 	        'public' => true
         ,'label' => esc_html__('Тип изделия', 'lfmanagement')
         ,'show_ui' => true
-        , 'show_in_menu' => 'lfmanagement/lfm_menu.php'
+        ,'show_in_menu' => 'lfmanagement/lfm_menu.php'
         ,'has_archive' => true
-        , 'support' => ['title','author', 'custom-fields']
+        ,'support' => ['title','author', 'custom-fields']
         );
 		//Описание типа изделия
 		//тип изделия, книга, брошюра, аудиокассета и т.д.
@@ -336,17 +369,21 @@ class LFManagement
 
         //автозаполняем год издания текущим если он пустой
 		$params['year'] = (""!==$params['year'] ? $params['year']: date( 'Y', time() ));
-        $res=LFM_core_proc::render_template(dirname(__FILE__).'/templates/lfm_card.php',$params);
+		$res = wp_nonce_field( plugin_basename( __FILE__ ), 'lfm_card_noncenamenoncename',TRUE, FALSE );
+        $res .= LFM_core_proc::render_template(dirname(__FILE__).'/templates/lfm_card.php',$params);
 		echo $res;
 
 	}
 	static function lfm_card_post_data__save($post_id) : void{
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-			return;
+
+//		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )//todo а зачем, может убрать?
+//  		return;
+
 
 		if ( !wp_verify_nonce( $_POST['lfm_card_noncenamenoncename'],
 			plugin_basename( __FILE__ ) ) )
 			return;
+
 
 		if ( !current_user_can( 'edit_post', $post_id ) )
 			return;
@@ -407,9 +444,10 @@ class LFManagement
 			update_post_meta( $post_id,'lfm_card__resume',
 				esc_attr( $_POST['lfm_card__resume'] ) );
 		}
+
+//		file_put_contents(__DIR__ . '/log.log', print_r($_POST,true) . PHP_EOL, FILE_APPEND);
         if( isset( $_POST['lfm_card_age_rating'] ) ){
 	        $rating = sanitize_text_field( $_POST['lfm_card_age_rating'] );
-
 
 	        if (! empty( $rating ) ) {
                 $term = get_term_by( 'name', $rating, 'lfm_card_age_rating' );
@@ -422,8 +460,8 @@ class LFManagement
 	}
 
 	function lfm_card_taxonomies() : void {
-		 $res = register_taxonomy('lfm_card_age_rating', 'lfm_card',
-			array(
+		 register_taxonomy('lfm_card_age_rating', 'lfm_card',
+			[
 				'hierarchical'=>FALSE,
 				'labels'=>[
                      'name'=> esc_html__('Возрастные ограничения','lfmanagement')
@@ -435,8 +473,35 @@ class LFManagement
 			,'show_in_menu'      => true
 			,'show_in_rest'      => true
 			,'meta_box_cb'       => [$this, 'lfm_default_select_meta_box__render']
-		)
+		]
         );
+		register_taxonomy('lfm_card_item_type', 'lfm_card', [
+				'hierarchical'=>FALSE,
+				'labels'=>[
+					'name'=> esc_html__('Вид изделия','lfmanagement')
+					,'singular_name' => esc_html__('Вид изделия','lfmanagement')
+				]
+			,'show_ui'           => true
+			,'show_admin_column' => true
+			,'query_var'         => true
+			,'show_in_menu'      => true
+			,'show_in_rest'      => true
+			,'meta_box_cb'       => [$this, 'lfm_default_select_meta_box__render']
+			]
+		);
+		register_term_meta( 'lfm_card_item_type', 'lfm_card_item_type__acc_unit', array(
+//			'show_in_rest'      => true     // Добавим в ответ REST
+			 'sanitize_callback' => NULL // Обработаем значение поля при сохранение его в базу, функцией absint()
+			,'description'       => 'Единица объёма'//например страницы, минуты, зависит от того, что за вид изделия например для компакт дисков это мегабайты
+			,'single'            => TRUE
+			,'show_in_rest' => ['schema' => [
+				'type' => 'string',
+				'format' => 'url',
+				'context' => [ 'view', 'edit' ],
+				'readonly' => true,
+			]]
+		) );
+
 
     }
 	static function remove_plugin_data() : void {
@@ -482,6 +547,7 @@ class LFManagement
 	}
 
 	static function lfm_default_meta_box__render($post, $params, $output_type) : void{
+
         $template_dir = plugin_dir_path(__FILE__)."templates/";
         $params['taxonomy'] = get_taxonomy($params["args"]["taxonomy"]);
 		$params['terms'] = get_terms( ['taxonomy' => $params['taxonomy']->name,'hide_empty' => false ] );
@@ -492,19 +558,12 @@ class LFManagement
 				$params['current_name'] = $current[0]->name;
 			}
 		}
-        switch ($output_type)
-        {
-            case ('select'):
-                echo LFM_core_proc::render_template($template_dir.'lfm_default_select_meta_box_template.php',$params);
-                break;
-            case ('radio'):
-	            echo LFM_core_proc::render_template($template_dir.'lfm_default_radio_meta_box_template.php',$params);
-                break;
-            case(is_string($output_type)):
-	            echo LFM_core_proc::render_template($output_type,$template_dir.$params.'.php');
-                break;
-            default: echo "функция отображения для ".$params['taxonomy']->label." задана не верно";
-        }
+		switch ( $output_type ) {
+			case 'select' : echo LFM_core_proc::render_template( $template_dir . 'lfm_default_select_meta_box_template.php', $params ); break;
+			case 'radio' : echo LFM_core_proc::render_template( $template_dir . 'lfm_default_radio_meta_box_template.php', $params ); break;
+			case is_string( $output_type ) : echo LFM_core_proc::render_template( $output_type, $template_dir . $params . '.php' ); break;
+			default : echo "функция отображения для " . $params['taxonomy']->label . " задана не верно";
+		};
 	}
 
     static function lfm_default_select_meta_box__render($post, $params) : void
