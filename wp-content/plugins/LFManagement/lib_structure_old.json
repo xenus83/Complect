@@ -1,0 +1,228 @@
+{
+  "post" : {
+    "lfm_card" : {
+                      "post_type_name" : "lfm_card"
+                    ,"post_type_args" : {
+                                          "labels":{
+                                                      "name": "Карточки"
+                                                      ,"singular_name" : "Карточка"
+                                                  } 
+                                        }
+                 }
+    ,"lfm_author" :{
+                     "post_type_name" : "lfm_author"
+                    ,"post_type_args" : {
+                                          "labels":{
+                                                     "name": "Авторы"
+                                                    ,"singular_name" : "Автор"
+                                                   } 
+                                        }
+                  }  
+    ,"lfm_record" :{
+                       "post_type_name" : "lfm_record"
+                      ,"post_type_args" : {
+                                            "labels":{
+                                                       "name": "Записи"
+                                                      ,"singular_name" : "Запись"
+                                                     } 
+                                          }
+                  }
+    ,"lfm_filial" :{
+                     "post_type_name" : "lfm_filial"
+                    ,"post_type_args" : {
+                                          "labels":{
+                                                    "name": "Филиалы"
+                                                    ,"singular_name" : "Филиал"
+                                                   } 
+                                        }
+                  }
+    ,"lfm_item" :{
+                     "post_type_name" : "lfm_item"
+                    ,"post_type_args" : {
+                                          "labels":{
+                                                      "name": "Изделия"
+                                                      ,"singular_name" : "Изделие"
+                                                   } 
+                                        }
+                }         
+  }
+  
+  ,
+  "taxonomy" : {
+    "lfm_card_item_type" :{
+                              "taxonomy_name" : "lfm_card_item_type"
+                              ,"parent_objec_type" : "lfm_card"
+                              ,"labels" : {
+                                             "name" : "Вид изделия"
+                                            ,"singular_name" : "Вид"
+                                          }
+    }
+    ,"lfm_card_age_rating" : {
+                                "taxonomy_name" : "lfm_card_age_rating"
+                               ,"parent_objec_type" : "lfm_card"
+                               ,"labels" : {
+                                              "name" : "Возрастные ограничения"
+                                            ,"singular_name" : "Возрастная группа"
+                                           }
+    }           
+  }
+  ,
+
+  "meta" : {
+    "lfm_card_item_type__acc_unit" : {
+                              "object_type" : "term"
+                             ,"meta_key" : "lfm_card_item_type__acc_unit"
+                             ,"args": {
+                                         "type" : "string" 
+                                        ,"object_subtype" : "lfm_card_item_type"
+                                        ,"description" : "Единица объёма"
+                                      }
+
+    }
+    ,"lfm_card_item_type__favorite" : {
+                             "object_type" : "term"
+                            ,"meta_key" : "lfm_card_item_type__favorite"
+                            ,"args": {
+                                        "type" : "boolean" 
+                                        ,"object_subtype" : "lfm_card_item_type"
+                                        ,"description"    : "Избранное"
+                                     }
+
+    }
+    ,"lfm_author__family_name" : {
+                            "object_type" : "post"
+                          ,"meta_key" : "lfm_author__family_name"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_author"
+                                      ,"description" : "Фамилия"
+                                   }
+    }
+    ,"lfm_author__name" : {
+                            "object_type" : "post"
+                          ,"meta_key" : "lfm_author__name"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_author"
+                                      ,"description" : "Имя"
+                                   }
+    }
+    ,"lfm_author__father_name" : {
+                            "object_type" : "post"
+                          ,"meta_key" : "lfm_author__father_name"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_author"
+                                      ,"description" : "Фамилия"
+                                  }
+    }
+    ,"lfm_author__birth_date" : {
+                            "object_type" : "post"
+                          ,"meta_key" : "lfm_author__birth_date"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_author"
+                                      ,"description" : "Дата рождения"
+                                  }
+    }
+    ,"lfm_author__country_or_language" : {
+                            "object_type" : "post"
+                          ,"meta_key" : "lfm_author__country_or_language"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_author"
+                                      ,"description" : "Страна/Язык"
+                                  }
+    }
+    ,"lfm_card__isbn" : {
+                          "object_type" : "post"
+                          ,"meta_key" : "lfm_card__isbn"
+                          ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_card"
+                                      ,"description" : "ISBN изделия"
+                                  }            
+    }
+    ,"lfm_card__year" : {
+                         "object_type" : "post"
+                         ,"meta_key" : "lfm_card__year"
+                         ,"args": {
+                                        "type" : "string"
+                                      ,"object_subtype" : "lfm_card"
+                                      ,"description" : "Год издания"
+                                   }            
+    }  
+    ,"lfm_card__volume_p" : {
+                        "object_type" : "post"
+                        ,"meta_key" : "lfm_card__volume_p"
+                        ,"args": {
+                                      "type" : "string"
+                                    ,"object_subtype" : "lfm_card"
+                                    ,"description" : "Том"
+                                  }            
+    }  
+    ,"lfm_card__otv_info" : {
+                      "object_type" : "post"
+                      ,"meta_key" : "lfm_card__otv_info"
+                      ,"args": {
+                                    "type" : "string"
+                                  ,"object_subtype" : "lfm_card"
+                                  ,"description" : "Сведения об отвественных"
+                                }            
+    }
+    ,"lfm_card__izd_info" : {
+                        "object_type" : "post"
+                        ,"meta_key" : "lfm_card__izd_info"
+                        ,"args": {
+                                    "type" : "string"
+                                    ,"object_subtype" : "lfm_card"
+                                    ,"description" : "Место издания"
+                                  }            
+    }
+    ,"lfm_card__publishing_house" : {
+                        "object_type" : "post"
+                        ,"meta_key" : "lfm_card__publishing_house"
+                        ,"args": {
+                                      "type" : "string"
+                                    ,"object_subtype" : "lfm_card"
+                                    ,"description" : "Издательство"
+                                  }            
+    }
+    ,"lfm_card__sys" : {
+                      "object_type" : "post"
+                      ,"meta_key" : "lfm_card__sys"
+                      ,"args": {
+                                    "type" : "string"
+                                  ,"object_subtype" : "lfm_card"
+                                  ,"description" : "Сист. треб"
+                                }            
+    }
+    ,"lfm_card__osnzaglser" : {
+                      "object_type" : "post"
+                      ,"meta_key" : "lfm_card__osnzaglser"
+                      ,"args": {
+                                    "type" : "string"
+                                  ,"object_subtype" : "lfm_card"
+                                  ,"description" : "ОснЗаглСер"
+                                }            
+    }
+    ,"lfm_card__note" : {
+                      "object_type" : "post"
+                      ,"meta_key" : "lfm_card__note"
+                      ,"args": {
+                                    "type" : "string"
+                                  ,"object_subtype" : "lfm_card"
+                                  ,"description" : "Примечание"
+                                }            
+    }
+    ,"lfm_card__resume" : {
+                      "object_type" : "post"
+                      ,"meta_key" : "lfm_card__resume"
+                      ,"args": {
+                                    "type" : "string"
+                                  ,"object_subtype" : "lfm_card"
+                                  ,"description" : "Содержание"
+                                }            
+    }
+  }
+}
