@@ -1,0 +1,39 @@
+.sm_holder {
+	padding:0px;
+	border-bottom: 5px solid #41B7D8;
+	width: 630px;
+}
+div.shelf {
+	background-image:url(shelf_bg.jpg);
+	display: block;
+}
+.shelf div.innerDiv {
+	padding:0px 34px;
+	width:100%;
+}
+.shelf .books img {
+	margin-right:10px;
+	padding-top: 15px;
+	margin-bottom: 11px;
+}
+span.old_price {
+	color: #E53B2C;
+	text-decoration: line-through;
+}
+.sm_book_tbl {
+	margin:0px 20px 0px 0px !important;
+	width:100%;
+	background-color:#f3f3f3;
+	border:1px solid #e5e5e5
+}
+.sm_book_tbl td.title {
+	height:60px;
+	width:70%;
+	padding-left:20px;
+	padding-right:20px;
+	color:#999
+}
+.sm_book_tbl td.cart {
+	padding:10px 20px;
+	color:#999;
+}

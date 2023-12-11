@@ -1,0 +1,45 @@
+{
+    "post" : {
+                    "post_type_name": "_obligatory"
+                    ,"post_type_args" : {
+                                              "public" : "true"
+                                             ,"label" : "post_label_template"
+                                             ,"show_ui" : true
+                                             ,"show_in_menu" : "lfmanagement/lfm_menu.php"
+                                             ,"has_archive" : true
+                                             ,"support" : ["title" , "author" , "custom-fields"]
+                                        }
+             }
+    ,
+    "taxonomy" : {
+                     "taxonomy_name" : "_obligatory"
+                    ,"parent_objec_type" : "_obligatory"
+                    ,"taxonomy_args" : {
+                                              "hierarchical": false
+                                             ,"labels":{
+                                                            "name": "_obligatory"
+                                                            ,"singular_name" : ""
+                                                       } 
+                                             ,"show_ui"           : true
+                                             ,"show_admin_column" : true
+                                             ,"query_var"         : true
+                                             ,"show_in_menu"      : true
+                                             ,"show_in_rest"      : true
+                                             ,"meta_box_cb"       : "lfm_default_select_meta_box__render" 
+                                        } 
+    }
+    ,   
+    "meta" : {
+                "object_type" : "_obligatory"
+               ,"meta_key" : "_obligatory"
+               ,"args" : {
+                                        "type"               : "string"
+                                        ,"object_subtype"    : ""
+                                        ,"description"       : "deault_meta_field"
+                                        ,"single"            : true
+                                        ,"sanitize_callback" : null
+                                        ,"auth_callback"     : null
+                                        ,"show_in_rest"      : true
+                                    }
+            }
+}

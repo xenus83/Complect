@@ -5,7 +5,7 @@
 	</div>
 	<div class="col-25">
 		<input type="<?php esc_attr_e($type); ?>" name="<?php esc_attr_e($name); ?>" class="lfm_meta_box__input"
-		       id="<?php esc_attr_e($name); ?>" value="<?php  esc_attr_e($value); ?>" />
+		       id="<?php esc_attr_e($name); ?>" value="<?php  esc_attr_e($value); ?>" <?php esc_attr_e($checked);?>/>
 	</div>
 </div>
 </p>
