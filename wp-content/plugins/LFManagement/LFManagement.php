@@ -128,7 +128,7 @@ class LFManagement
 			{
 				if($def_val === "_obligatory")
 					if(!isset($arr[$def_key])) 
-						return;
+						return 1;
 			}
 	}
 
@@ -145,9 +145,15 @@ class LFManagement
 		
 
 		foreach($json_data_structure AS $ds_key => $ds_val) {
+			$ff=0;
 			if($ds_key == 'post') {
 				foreach ( $ds_val as $post_key => $post_val ) {
 					$f = $this->check_fields($json_default_data_structure['post'], $post_val);
+					if($f > 0) 
+						{
+							$ff = $f;
+							//TODO предусмотреть какой-то вывод
+						}									
 				}
 			}
 			
