@@ -122,13 +122,45 @@ class LFManagement
 			)
 		);
 	}
-	private function check_fields(array $def_arr, array $arr)
+
+
+	private function check_obligatory_fields(array $def_arr, array $arr)
 	{
 		foreach($def_arr as $def_key => $def_val)
 			{
 				if($def_val === "_obligatory")
 					if(!isset($arr[$def_key])) 
 						return 1;
+			}
+	}
+
+	private function comparing_merging_fields(array $def_arr, array $arr)
+	{
+		foreach($def_arr as $def_key => $def_val)
+			{	if(is_array($def_val))
+				{
+					if(isset($arr[$def_key]))
+						$f = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+					else
+					{
+						 $arr[$def_key] = $def_val;
+						 $f = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+					}
+					if ($f > 0) ; //TODO что тогда длеать то?
+
+				}
+				else
+				{
+					if(!isset($arr[$def_key]))
+					{
+						if($def_val === "_obligatory")
+							return 1;
+						//TODO сделать какую-то обработку... дополнительно
+						else
+							$arr[$def_key] = $def_val;
+					}
+				}
+						
 			}
 	}
 
@@ -142,13 +174,16 @@ class LFManagement
 		LFM_core_proc::file_log("json_data_structure:");
 		LFM_core_proc::file_log($json_data_structure);
 
-		
+
 
 		foreach($json_data_structure AS $ds_key => $ds_val) {
 			$ff=0;
 			if($ds_key == 'post') {
+				foreach($json_default_data_structure[$ds_key] AS $dfs_key => $ds_def_key){
+					
+				}
 				foreach ( $ds_val as $post_key => $post_val ) {
-					$f = $this->check_fields($json_default_data_structure['post'], $post_val);
+					$f = $this->check_obligatory_fields($json_default_data_structure['post'], $post_val);
 					if($f > 0) 
 						{
 							$ff = $f;
