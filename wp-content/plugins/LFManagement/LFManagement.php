@@ -136,17 +136,20 @@ class LFManagement
 
 	private function comparing_merging_fields(array $def_arr, array $arr)
 	{
+		$f=0;
 		foreach($def_arr as $def_key => $def_val)
-			{	if(is_array($def_val))
+			{	
+				if(is_array($def_val))
 				{
 					if(isset($arr[$def_key]))
-						$f = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 					else
 					{
 						 $arr[$def_key] = $def_val;
-						 $f = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+						 $ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 					}
-					if ($f > 0) ; //TODO что тогда длеать то?
+					if ($ff > 0) 
+						$f = 1; //TODO что тогда длеать то?
 
 				}
 				else
@@ -154,7 +157,8 @@ class LFManagement
 					if(!isset($arr[$def_key]))
 					{
 						if($def_val === "_obligatory")
-							return 1;
+							$f = 1;
+							
 						//TODO сделать какую-то обработку... дополнительно
 						else
 							$arr[$def_key] = $def_val;
@@ -162,6 +166,8 @@ class LFManagement
 				}
 						
 			}
+			
+		return $f; 
 	}
 
 	private function make_objects_structure() : void {
@@ -176,30 +182,13 @@ class LFManagement
 
 
 
-		foreach($json_data_structure AS $ds_key => $ds_val) {
+		foreach ( $json_data_structure AS $ds_key => $ds_val ) {
 			$ff=0;
-			if($ds_key == 'post') {
-				foreach($json_default_data_structure[$ds_key] AS $dfs_key => $ds_def_key){
-					
-				}
-				foreach ( $ds_val as $post_key => $post_val ) {
-					$f = $this->check_obligatory_fields($json_default_data_structure['post'], $post_val);
-					if($f > 0) 
-						{
-							$ff = $f;
-							//TODO предусмотреть какой-то вывод
-						}									
-				}
+			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
+				
+				$this->comparing_merging_fields($json_default_data_structure[$ds_key],$ds_val);
+
 			}
-			
-			// if($ds_key == 'taxonomy')
-			// 	foreach($ds_val AS $tax_key => $tax_val){
-			// 		$f = check_fields($checking_fields, $tax_val);
-			// 	}
-			// if($ds_key == 'meta')
-			// 	foreach($ds_val AS $field_key => $field_val){
-			// 		$f = check_fields($checking_fields, $field_val);
-			// 	}
 		}
 	}
 
