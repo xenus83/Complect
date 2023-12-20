@@ -417,423 +417,124 @@ Array
 
 )
 
-json_default_data_structure:
+test:
+_obligatory
+test:
+true
+test:
+post_label_template
+test:
+true
+test:
+lfmanagement/lfm_menu.php
+test:
+true
+test:
+title
+test:
+author
+test:
+custom-fields
+test:
 Array
 (
-    [post] => Array
+    [0] => title
+    [1] => author
+    [2] => custom-fields
+)
+
+test:
+Array
+(
+    [public] => true
+    [label] => post_label_template
+    [show_ui] => 1
+    [show_in_menu] => lfmanagement/lfm_menu.php
+    [has_archive] => 1
+    [support] => Array
         (
-            [post_type_name] => _obligatory
-            [post_type_args] => Array
-                (
-                    [public] => true
-                    [label] => post_label_template
-                    [show_ui] => 1
-                    [show_in_menu] => lfmanagement/lfm_menu.php
-                    [has_archive] => 1
-                    [support] => Array
-                        (
-                            [0] => title
-                            [1] => author
-                            [2] => custom-fields
-                        )
-
-                )
-
-        )
-
-    [taxonomy] => Array
-        (
-            [taxonomy_name] => _obligatory
-            [parent_objec_type] => _obligatory
-            [taxonomy_args] => Array
-                (
-                    [hierarchical] => 
-                    [labels] => Array
-                        (
-                            [name] => _obligatory
-                            [singular_name] => 
-                        )
-
-                    [show_ui] => 1
-                    [show_admin_column] => 1
-                    [query_var] => 1
-                    [show_in_menu] => 1
-                    [show_in_rest] => 1
-                    [meta_box_cb] => lfm_default_select_meta_box__render
-                )
-
-        )
-
-    [meta] => Array
-        (
-            [object_type] => _obligatory
-            [meta_key] => _obligatory
-            [args] => Array
-                (
-                    [type] => string
-                    [object_subtype] => 
-                    [description] => deault_meta_field
-                    [single] => 1
-                    [sanitize_callback] => 
-                    [auth_callback] => 
-                    [show_in_rest] => 1
-                )
-
+            [0] => title
+            [1] => author
+            [2] => custom-fields
         )
 
 )
 
-json_data_structure:
+test:
+_obligatory
+test:
+_obligatory
+test:
+false
+test:
+_obligatory
+test:
+
+test:
 Array
 (
-    [post] => Array
+    [name] => _obligatory
+    [singular_name] => 
+)
+
+test:
+true
+test:
+true
+test:
+true
+test:
+true
+test:
+true
+test:
+lfm_default_select_meta_box__render
+test:
+Array
+(
+    [hierarchical] => 
+    [labels] => Array
         (
-            [lfm_card] => Array
-                (
-                    [post_type_name] => lfm_card
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Карточки
-                                    [singular_name] => Карточка
-                                )
-
-                        )
-
-                    [taxonomy] => Array
-                        (
-                            [lfm_card_item_type] => Array
-                                (
-                                    [taxonomy_name] => lfm_card_item_type
-                                    [parent_objec_type] => lfm_card
-                                    [labels] => Array
-                                        (
-                                            [name] => Вид изделия
-                                            [singular_name] => Вид
-                                        )
-
-                                    [meta] => Array
-                                        (
-                                            [lfm_card_item_type__acc_unit] => Array
-                                                (
-                                                    [object_type] => term
-                                                    [meta_key] => lfm_card_item_type__acc_unit
-                                                    [args] => Array
-                                                        (
-                                                            [type] => string
-                                                            [object_subtype] => lfm_card_item_type
-                                                            [description] => Единица объёма
-                                                        )
-
-                                                )
-
-                                            [lfm_card_item_type__favorite] => Array
-                                                (
-                                                    [object_type] => term
-                                                    [meta_key] => lfm_card_item_type__favorite
-                                                    [args] => Array
-                                                        (
-                                                            [type] => boolean
-                                                            [object_subtype] => lfm_card_item_type
-                                                            [description] => Избранное
-                                                        )
-
-                                                )
-
-                                        )
-
-                                )
-
-                            [lfm_card_age_rating] => Array
-                                (
-                                    [taxonomy_name] => lfm_card_age_rating
-                                    [parent_objec_type] => lfm_card
-                                    [labels] => Array
-                                        (
-                                            [name] => Возрастные ограничения
-                                            [singular_name] => Возрастная группа
-                                        )
-
-                                )
-
-                        )
-
-                    [meta] => Array
-                        (
-                            [lfm_card__isbn] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__isbn
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => ISBN изделия
-                                        )
-
-                                )
-
-                            [lfm_card__year] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__year
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Год издания
-                                        )
-
-                                )
-
-                            [lfm_card__volume_p] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__volume_p
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Том
-                                        )
-
-                                )
-
-                            [lfm_card__otv_info] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__otv_info
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Сведения об отвественных
-                                        )
-
-                                )
-
-                            [lfm_card__izd_info] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__izd_info
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Место издания
-                                        )
-
-                                )
-
-                            [lfm_card__publishing_house] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__publishing_house
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Издательство
-                                        )
-
-                                )
-
-                            [lfm_card__sys] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__sys
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Сист. треб
-                                        )
-
-                                )
-
-                            [lfm_card__osnzaglser] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__osnzaglser
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => ОснЗаглСер
-                                        )
-
-                                )
-
-                            [lfm_card__note] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__note
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Примечание
-                                        )
-
-                                )
-
-                            [lfm_card__resume] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__resume
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Содержание
-                                        )
-
-                                )
-
-                        )
-
-                )
-
-            [lfm_author] => Array
-                (
-                    [post_type_name] => lfm_author
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Авторы
-                                    [singular_name] => Автор
-                                )
-
-                        )
-
-                    [meta] => Array
-                        (
-                            [lfm_author__family_name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__family_name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Фамилия
-                                        )
-
-                                )
-
-                            [lfm_author__name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Имя
-                                        )
-
-                                )
-
-                            [lfm_author__father_name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__father_name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Фамилия
-                                        )
-
-                                )
-
-                            [lfm_author__birth_date] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__birth_date
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Дата рождения
-                                        )
-
-                                )
-
-                            [lfm_author__country_or_language] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__country_or_language
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Страна/Язык
-                                        )
-
-                                )
-
-                        )
-
-                )
-
-            [lfm_record] => Array
-                (
-                    [post_type_name] => lfm_record
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Записи
-                                    [singular_name] => Запись
-                                )
-
-                        )
-
-                )
-
-            [lfm_filial] => Array
-                (
-                    [post_type_name] => lfm_filial
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Филиалы
-                                    [singular_name] => Филиал
-                                )
-
-                        )
-
-                )
-
-            [lfm_item] => Array
-                (
-                    [post_type_name] => lfm_item
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Изделия
-                                    [singular_name] => Изделие
-                                )
-
-                        )
-
-                )
-
+            [name] => _obligatory
+            [singular_name] => 
         )
 
-    [taxonomy] => Array
-        (
-        )
+    [show_ui] => 1
+    [show_admin_column] => 1
+    [query_var] => 1
+    [show_in_menu] => 1
+    [show_in_rest] => 1
+    [meta_box_cb] => lfm_default_select_meta_box__render
+)
 
-    [meta] => Array
-        (
-        )
+test:
+_obligatory
+test:
+_obligatory
+test:
+string
+test:
 
+test:
+deault_meta_field
+test:
+true
+test:
+
+test:
+
+test:
+true
+test:
+Array
+(
+    [type] => string
+    [object_subtype] => 
+    [description] => deault_meta_field
+    [single] => 1
+    [sanitize_callback] => 
+    [auth_callback] => 
+    [show_in_rest] => 1
 )
 
 json_default_data_structure:
@@ -1255,422 +956,123 @@ Array
 
 )
 
-json_default_data_structure:
+test:
+_obligatory
+test:
+true
+test:
+post_label_template
+test:
+true
+test:
+lfmanagement/lfm_menu.php
+test:
+true
+test:
+title
+test:
+author
+test:
+custom-fields
+test:
 Array
 (
-    [post] => Array
+    [0] => title
+    [1] => author
+    [2] => custom-fields
+)
+
+test:
+Array
+(
+    [public] => true
+    [label] => post_label_template
+    [show_ui] => 1
+    [show_in_menu] => lfmanagement/lfm_menu.php
+    [has_archive] => 1
+    [support] => Array
         (
-            [post_type_name] => _obligatory
-            [post_type_args] => Array
-                (
-                    [public] => true
-                    [label] => post_label_template
-                    [show_ui] => 1
-                    [show_in_menu] => lfmanagement/lfm_menu.php
-                    [has_archive] => 1
-                    [support] => Array
-                        (
-                            [0] => title
-                            [1] => author
-                            [2] => custom-fields
-                        )
-
-                )
-
-        )
-
-    [taxonomy] => Array
-        (
-            [taxonomy_name] => _obligatory
-            [parent_objec_type] => _obligatory
-            [taxonomy_args] => Array
-                (
-                    [hierarchical] => 
-                    [labels] => Array
-                        (
-                            [name] => _obligatory
-                            [singular_name] => 
-                        )
-
-                    [show_ui] => 1
-                    [show_admin_column] => 1
-                    [query_var] => 1
-                    [show_in_menu] => 1
-                    [show_in_rest] => 1
-                    [meta_box_cb] => lfm_default_select_meta_box__render
-                )
-
-        )
-
-    [meta] => Array
-        (
-            [object_type] => _obligatory
-            [meta_key] => _obligatory
-            [args] => Array
-                (
-                    [type] => string
-                    [object_subtype] => 
-                    [description] => deault_meta_field
-                    [single] => 1
-                    [sanitize_callback] => 
-                    [auth_callback] => 
-                    [show_in_rest] => 1
-                )
-
+            [0] => title
+            [1] => author
+            [2] => custom-fields
         )
 
 )
 
-json_data_structure:
+test:
+_obligatory
+test:
+_obligatory
+test:
+false
+test:
+_obligatory
+test:
+
+test:
 Array
 (
-    [post] => Array
+    [name] => _obligatory
+    [singular_name] => 
+)
+
+test:
+true
+test:
+true
+test:
+true
+test:
+true
+test:
+true
+test:
+lfm_default_select_meta_box__render
+test:
+Array
+(
+    [hierarchical] => 
+    [labels] => Array
         (
-            [lfm_card] => Array
-                (
-                    [post_type_name] => lfm_card
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Карточки
-                                    [singular_name] => Карточка
-                                )
-
-                        )
-
-                    [taxonomy] => Array
-                        (
-                            [lfm_card_item_type] => Array
-                                (
-                                    [taxonomy_name] => lfm_card_item_type
-                                    [parent_objec_type] => lfm_card
-                                    [labels] => Array
-                                        (
-                                            [name] => Вид изделия
-                                            [singular_name] => Вид
-                                        )
-
-                                    [meta] => Array
-                                        (
-                                            [lfm_card_item_type__acc_unit] => Array
-                                                (
-                                                    [object_type] => term
-                                                    [meta_key] => lfm_card_item_type__acc_unit
-                                                    [args] => Array
-                                                        (
-                                                            [type] => string
-                                                            [object_subtype] => lfm_card_item_type
-                                                            [description] => Единица объёма
-                                                        )
-
-                                                )
-
-                                            [lfm_card_item_type__favorite] => Array
-                                                (
-                                                    [object_type] => term
-                                                    [meta_key] => lfm_card_item_type__favorite
-                                                    [args] => Array
-                                                        (
-                                                            [type] => boolean
-                                                            [object_subtype] => lfm_card_item_type
-                                                            [description] => Избранное
-                                                        )
-
-                                                )
-
-                                        )
-
-                                )
-
-                            [lfm_card_age_rating] => Array
-                                (
-                                    [taxonomy_name] => lfm_card_age_rating
-                                    [parent_objec_type] => lfm_card
-                                    [labels] => Array
-                                        (
-                                            [name] => Возрастные ограничения
-                                            [singular_name] => Возрастная группа
-                                        )
-
-                                )
-
-                        )
-
-                    [meta] => Array
-                        (
-                            [lfm_card__isbn] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__isbn
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => ISBN изделия
-                                        )
-
-                                )
-
-                            [lfm_card__year] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__year
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Год издания
-                                        )
-
-                                )
-
-                            [lfm_card__volume_p] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__volume_p
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Том
-                                        )
-
-                                )
-
-                            [lfm_card__otv_info] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__otv_info
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Сведения об отвественных
-                                        )
-
-                                )
-
-                            [lfm_card__izd_info] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__izd_info
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Место издания
-                                        )
-
-                                )
-
-                            [lfm_card__publishing_house] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__publishing_house
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Издательство
-                                        )
-
-                                )
-
-                            [lfm_card__sys] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__sys
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Сист. треб
-                                        )
-
-                                )
-
-                            [lfm_card__osnzaglser] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__osnzaglser
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => ОснЗаглСер
-                                        )
-
-                                )
-
-                            [lfm_card__note] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__note
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Примечание
-                                        )
-
-                                )
-
-                            [lfm_card__resume] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_card__resume
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_card
-                                            [description] => Содержание
-                                        )
-
-                                )
-
-                        )
-
-                )
-
-            [lfm_author] => Array
-                (
-                    [post_type_name] => lfm_author
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Авторы
-                                    [singular_name] => Автор
-                                )
-
-                        )
-
-                    [meta] => Array
-                        (
-                            [lfm_author__family_name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__family_name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Фамилия
-                                        )
-
-                                )
-
-                            [lfm_author__name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Имя
-                                        )
-
-                                )
-
-                            [lfm_author__father_name] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__father_name
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Фамилия
-                                        )
-
-                                )
-
-                            [lfm_author__birth_date] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__birth_date
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Дата рождения
-                                        )
-
-                                )
-
-                            [lfm_author__country_or_language] => Array
-                                (
-                                    [object_type] => post
-                                    [meta_key] => lfm_author__country_or_language
-                                    [args] => Array
-                                        (
-                                            [type] => string
-                                            [object_subtype] => lfm_author
-                                            [description] => Страна/Язык
-                                        )
-
-                                )
-
-                        )
-
-                )
-
-            [lfm_record] => Array
-                (
-                    [post_type_name] => lfm_record
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Записи
-                                    [singular_name] => Запись
-                                )
-
-                        )
-
-                )
-
-            [lfm_filial] => Array
-                (
-                    [post_type_name] => lfm_filial
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Филиалы
-                                    [singular_name] => Филиал
-                                )
-
-                        )
-
-                )
-
-            [lfm_item] => Array
-                (
-                    [post_type_name] => lfm_item
-                    [post_type_args] => Array
-                        (
-                            [labels] => Array
-                                (
-                                    [name] => Изделия
-                                    [singular_name] => Изделие
-                                )
-
-                        )
-
-                )
-
+            [name] => _obligatory
+            [singular_name] => 
         )
 
-    [taxonomy] => Array
-        (
-        )
+    [show_ui] => 1
+    [show_admin_column] => 1
+    [query_var] => 1
+    [show_in_menu] => 1
+    [show_in_rest] => 1
+    [meta_box_cb] => lfm_default_select_meta_box__render
+)
 
-    [meta] => Array
-        (
-        )
+test:
+_obligatory
+test:
+_obligatory
+test:
+string
+test:
 
+test:
+deault_meta_field
+test:
+true
+test:
+
+test:
+
+test:
+true
+test:
+Array
+(
+    [type] => string
+    [object_subtype] => 
+    [description] => deault_meta_field
+    [single] => 1
+    [sanitize_callback] => 
+    [auth_callback] => 
+    [show_in_rest] => 1
 )
 
