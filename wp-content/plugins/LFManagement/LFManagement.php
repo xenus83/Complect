@@ -53,7 +53,7 @@ class LFManagement
 		add_action( "create_lfm_card_item_type", [$this, 'lfm_save_term_meta_data' ] );
 		add_action( "edited_lfm_card_item_type", [$this, 'lfm_save_term_meta_data' ] );
 	}
-
+	protected array $default_data_structure;
 	protected array $data_structure = [
 		'post' =>[
 			'lfm_card'=>[
@@ -142,11 +142,11 @@ class LFManagement
 				if(is_array($def_val))
 				{
 					if(isset($arr[$def_key]))
-						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]); //проверяем, что там заполнены все обяз. поля
 					else
 					{
-						 $arr[$def_key] = $def_val;
-						 $ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+						 $arr[$def_key] = $def_val; 									 //такого массива нет в пользовательском типе, мы добавляем
+						 $ff = $this->comparing_merging_fields($def_val, $arr[$def_key]); //проверяем, что там заполнены все обяз. поля, точнее что их не дожно было быть
 					}
 					if ($ff > 0) 
 						$f = 1; //TODO что тогда длеать то?
@@ -171,25 +171,55 @@ class LFManagement
 	}
 
 	private function make_objects_structure() : void {
-		$json_default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
-		if(1 === $json_default_data_structure) return; //TODO может что-то вывести пользователю?
-		LFM_core_proc::file_log("json_default_data_structure:");
-		LFM_core_proc::file_log($json_default_data_structure);
+		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
+		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
+		// LFM_core_proc::file_log("json_default_data_structure:");
+		// LFM_core_proc::file_log($this->default_data_structure);
 		$json_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/lib_structure.json");
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
-		LFM_core_proc::file_log("json_data_structure:");
-		LFM_core_proc::file_log($json_data_structure);
+		// LFM_core_proc::file_log("json_data_structure:");
+		// LFM_core_proc::file_log($json_data_structure);
 
 
 
 		foreach ( $json_data_structure AS $ds_key => $ds_val ) {
-			$ff=0;
+			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				
-				$this->comparing_merging_fields($json_default_data_structure[$ds_key],$ds_val);
+				foreach( $ds_val AS $de_key => $de_val)
+				{
+					$ff = $this->comparing_merging_fields($this->default_data_structure[$ds_key],$de_val);
+					$de_val['ff'] = $ff;
+					$ff=0;
+					if(isset($de_val['post']))
+						{
+							$ff = $this->comparing_merging_fields($this->default_data_structure['post'],$de_val['post']);
+							if(0 == $de_val['ff'] && 0< $ff) 
+								{
+									$de_val['ff'] = $ff;
+								}
+						}
+					if(isset($de_val['taxonomy']))
+						{
+							$ff = $this->comparing_merging_fields($this->default_data_structure['taxonomy'],$de_val['taxonomy']);
+							if(0 == $de_val['ff'] && 0< $ff) 
+							{
+								$de_val['ff'] = $ff;
+							}
+						}
+					if(isset($de_val['meta']))
+					{
+						$ff = $this->comparing_merging_fields($this->default_data_structure['meta'],$de_val['meta']);
+						if(0 == $de_val['ff'] && 0< $ff) 
+						{
+							$de_val['ff'] = $ff;
+						}
+					}	
 
+				}
 			}
 		}
+		LFM_core_proc::file_log("json_data_structure:");
+		LFM_core_proc::file_log($json_data_structure);
 	}
 
 	private function check_obligatory_fields_of_logic_objects( string $type, $obj_arr ) : bool {
