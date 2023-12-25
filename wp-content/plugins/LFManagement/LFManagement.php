@@ -54,6 +54,9 @@ class LFManagement
 		add_action( "edited_lfm_card_item_type", [$this, 'lfm_save_term_meta_data' ] );
 	}
 
+
+	protected array $default_data_structure; //(from .JSON lib_structure_defaults.json)
+
 	protected array $data_structure = [
 		'post' =>[
 			'lfm_card'=>[
@@ -123,81 +126,94 @@ class LFManagement
 		);
 	}
 
-
-	private function check_obligatory_fields(array $def_arr, array $arr)
+	private function comparing_merging_fields(array $def_arr, array &$arr)
 	{
-		foreach($def_arr as $def_key => $def_val)
-			{
-				if($def_val === "_obligatory")
-					if(!isset($arr[$def_key])) 
-						return 1;
-			}
-	}
 
-	private function comparing_merging_fields(array $def_arr, array $arr)
-	{
+		// LFM_core_proc::file_log("test:");
+		// LFM_core_proc::file_log($arr);
 		$f=0;
-		foreach($def_arr as $def_key => $def_val)
-			{	
+		foreach($arr AS $ds_key => &$ds_val)
+		{		
+			foreach($def_arr as $def_key => $def_val)
+			{					
 				if(is_array($def_val))
 				{
-					if(isset($arr[$def_key]))
-						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+
+					if(isset($ds_val[$def_key]))
+					{
+							$ff = $this->comparing_merging_fields($def_val, $ds_val[$def_key]);
+					}
 					else
 					{
-						 $arr[$def_key] = $def_val;
-						 $ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+						
+						$ds_val[$def_key] = $def_val;
+						LFM_core_proc::file_log("test:= [!]".$def_key);
+						LFM_core_proc::file_log($def_val);
+						$ff = $this->comparing_merging_fields($def_val, $ds_val[$def_key]);
 					}
+
 					if ($ff > 0) 
 						$f = 1; //TODO что тогда длеать то?
-
 				}
 				else
 				{
-					if(!isset($arr[$def_key]))
+										
+					if(!isset($ds_val[$def_key]))
 					{
-						if($def_val === "_obligatory")
-							$f = 1;
-							
+						if($def_val == "_obligatory")
+							$f = 1;							
 						//TODO сделать какую-то обработку... дополнительно
 						else
-							$arr[$def_key] = $def_val;
+							{
+								$ds_val[$def_key] = $def_val;
+							}
 					}
+					
 				}
-						
 			}
-			
+			foreach($ds_val AS $dse_key => &$dse_val)
+			{
+				if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
+					$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_val);
+				}
+			}
+		}
 		return $f; 
 	}
 
 	private function make_objects_structure() : void {
-		$json_default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
-		if(1 === $json_default_data_structure) return; //TODO может что-то вывести пользователю?
-		LFM_core_proc::file_log("json_default_data_structure:");
-		LFM_core_proc::file_log($json_default_data_structure);
+		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
+		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
+		// LFM_core_proc::file_log("json_default_data_structure:");
+		// LFM_core_proc::file_log($json_default_data_structure);
 		$json_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/lib_structure.json");
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
-		LFM_core_proc::file_log("json_data_structure:");
-		LFM_core_proc::file_log($json_data_structure);
+		// LFM_core_proc::file_log("json_data_structure:");
+		// LFM_core_proc::file_log($json_data_structure);
 
-
-
-		foreach ( $json_data_structure AS $ds_key => $ds_val ) {
-			$ff=0;
+		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
+			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				
-				$this->comparing_merging_fields($json_default_data_structure[$ds_key],$ds_val);
-
+				LFM_core_proc::file_log("test:");
+				$this->comparing_merging_fields($this->default_data_structure[$ds_key],$ds_val);
+				LFM_core_proc::file_log($ds_val);
 			}
 		}
+
+		// LFM_core_proc::file_log("merged_json_data_structure:");
+		// LFM_core_proc::file_log($json_data_structure);
+
+		// $is_post = 0;
+		// foreach( $json_data_structure AS $ds_key => $ds_val ) {
+		// 	if(is_array($ds_val))			
+		// 	foreach ( $ds_val AS $de_key => $de_val )
+		// 	{
+		// 		if( $de_val['ff'] > 0 )
+		// 	}
+
+		// }
 	}
 
-	private function check_obligatory_fields_of_logic_objects( string $type, $obj_arr ) : bool {
-			if('post' == $type) {
-				if( !isset($obj_arr['label'])) return false;
-			}
-		return true;
-	}
 
 	function render_lfm_page() : void {
 		echo "<h1>Настройка плагина lfm Plugin</h1>";
@@ -218,12 +234,12 @@ class LFManagement
 		self::make_objects_structure();
 //		console_log( self::class, null, 0, "register post_types" );
         $post_type_args = array(
-	     'public' => true
-        ,'label' => esc_html__('Тип изделия', 'lfmanagement')
-        ,'show_ui' => true
-        ,'show_in_menu' => 'lfmanagement/lfm_menu.php'
-        ,'has_archive' => true
-        ,'support' => ['title','author', 'custom-fields']
+			'public' => true
+			,'label' => esc_html__('Тип изделия', 'lfmanagement')
+			,'show_ui' => true
+			,'show_in_menu' => 'lfmanagement/lfm_menu.php'
+			,'has_archive' => true
+			,'support' => ['title','author', 'custom-fields']
         );
 		//Описание типа изделия\
 		//тип изделия, книга, брошюра, аудиокассета и т.д.

@@ -44,6 +44,7 @@ function console_log(): string {
 	       . $caller['function'] . '()`, '
 	       . ( strlen( $action ) > 0 ? '`🪝`, `' . $action . '`, ' : '' )
 	       . '` ➡️ `, ' . implode( ', ', $encoded_args );
+	file_put_contents('log_DEBUG.log', $msg . PHP_EOL, FILE_APPEND);
 	$html = '<script type="text/javascript">console.log(' . $msg . ')</script>';
 	add_action( 'wp_enqueue_scripts', function() use ( $html ) {
 		echo $html;
