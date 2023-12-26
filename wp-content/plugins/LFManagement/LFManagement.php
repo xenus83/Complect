@@ -169,7 +169,7 @@ class LFManagement
 				
 			}
 		}
-		foreach($ds_val AS $dse_key => &$dse_val)
+		foreach($arr AS $dse_key => &$dse_val)
 		{
 			if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
 				foreach($dse_val AS $dse_e_key => &$dse_e_val){
@@ -195,9 +195,12 @@ class LFManagement
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
 				// LFM_core_proc::file_log("test key: ".$ds_key);
-				$this->comparing_merging_fields($this->default_data_structure[$ds_key],$ds_val);
-				// LFM_core_proc::file_log($ds_val);
+				foreach($ds_val AS $dse_key => &$dse_val){
+					$this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
+				}
 			}
+			LFM_core_proc::file_log($ds_val);
+				
 		}
 
 		// LFM_core_proc::file_log("merged_json_data_structure:");
