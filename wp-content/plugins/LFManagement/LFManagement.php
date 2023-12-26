@@ -190,6 +190,8 @@ class LFManagement
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
 		// LFM_core_proc::file_log("json_data_structure:");
 		// LFM_core_proc::file_log($json_data_structure);
+		// LFM_core_proc::file_log("json_data_structure:");
+		// LFM_core_proc::file_log($json_data_structure);
 
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
