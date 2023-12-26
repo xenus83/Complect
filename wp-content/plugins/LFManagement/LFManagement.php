@@ -128,16 +128,14 @@ class LFManagement
 
 	private function comparing_merging_fields(array $def_arr, array &$arr){
 
-		LFM_core_proc::file_log("def_arr:");
-		LFM_core_proc::file_log($def_arr);
-		LFM_core_proc::file_log("arr:");
-		LFM_core_proc::file_log($arr);
 		$f=0;
 
 		foreach($def_arr as $def_key => $def_val)
 		{					
 			if(is_array($def_val))
 			{
+				LFM_core_proc::file_log("isset(arr[".$def_key."]):");
+				LFM_core_proc::file_log(isset($arr[$def_key]));
 
 				if(isset($arr[$def_key]))
 				{
