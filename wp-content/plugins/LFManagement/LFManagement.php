@@ -143,8 +143,8 @@ class LFManagement
 				{
 					
 					$arr[$def_key] = $def_val;
-					LFM_core_proc::file_log("test:= [!]".$def_key);
-					LFM_core_proc::file_log($arr[$def_key]);
+					// LFM_core_proc::file_log("test:= [!]".$def_key);
+					// LFM_core_proc::file_log($arr[$def_key]);
 					$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
 
@@ -178,7 +178,7 @@ class LFManagement
 				}
 			}
 		}
-		LFM_core_proc::file_log($arr);
+		// LFM_core_proc::file_log($arr);
 		return $f; 
 	}
 
@@ -195,14 +195,14 @@ class LFManagement
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				LFM_core_proc::file_log("test key: ".$ds_key);
+				// LFM_core_proc::file_log("test key: ".$ds_key);
 				foreach($ds_val AS $dse_key => &$dse_val){
 					$this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
 				}
 			}
 				
 		}
-		// LFM_core_proc::file_log($json_data_structure);
+		LFM_core_proc::file_log($json_data_structure);
 
 		// LFM_core_proc::file_log("merged_json_data_structure:");
 		// LFM_core_proc::file_log($json_data_structure);
