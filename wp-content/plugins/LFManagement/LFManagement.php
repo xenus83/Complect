@@ -128,8 +128,10 @@ class LFManagement
 
 	private function comparing_merging_fields(array $def_arr, array &$arr){
 
-		// LFM_core_proc::file_log("test:");
-		// LFM_core_proc::file_log($arr);
+		LFM_core_proc::file_log("def_arr:");
+		LFM_core_proc::file_log($def_arr);
+		LFM_core_proc::file_log("arr:");
+		LFM_core_proc::file_log($arr);
 		$f=0;
 
 		foreach($def_arr as $def_key => $def_val)
@@ -194,7 +196,7 @@ class LFManagement
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				// LFM_core_proc::file_log("test key: ".$ds_key);
+				LFM_core_proc::file_log("test key: ".$ds_key);
 				foreach($ds_val AS $dse_key => &$dse_val){
 					$this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
 				}
