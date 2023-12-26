@@ -18,7 +18,6 @@
                                               "hierarchical": false
                                              ,"labels":{
                                                             "name": "_obligatory"
-                                                            ,"singular_name" : ""
                                                        } 
                                              ,"show_ui"           : true
                                              ,"show_admin_column" : true
@@ -34,7 +33,6 @@
                ,"meta_key" : "_obligatory"
                ,"args" : {
                                         "type"               : "string"
-                                        ,"object_subtype"    : ""
                                         ,"description"       : "deault_meta_field"
                                         ,"single"            : true
                                         ,"sanitize_callback" : null

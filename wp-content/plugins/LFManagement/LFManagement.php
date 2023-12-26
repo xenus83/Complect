@@ -132,52 +132,52 @@ class LFManagement
 		// LFM_core_proc::file_log("test:");
 		// LFM_core_proc::file_log($arr);
 		$f=0;
-		foreach($arr AS $ds_key => &$ds_val)
-		{		
-			foreach($def_arr as $def_key => $def_val)
-			{					
-				if(is_array($def_val))
+
+		foreach($def_arr as $def_key => $def_val)
+		{					
+			if(is_array($def_val))
+			{
+
+				if(isset($arr[$def_key]))
 				{
-
-					if(isset($ds_val[$def_key]))
-					{
-							$ff = $this->comparing_merging_fields($def_val, $ds_val[$def_key]);
-					}
-					else
-					{
-						
-						$ds_val[$def_key] = $def_val;
-						LFM_core_proc::file_log("test:= [!]".$def_key);
-						LFM_core_proc::file_log($def_val);
-						$ff = $this->comparing_merging_fields($def_val, $ds_val[$def_key]);
-					}
-
-					if ($ff > 0) 
-						$f = 1; //TODO что тогда длеать то?
+						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
 				else
 				{
-										
-					if(!isset($ds_val[$def_key]))
-					{
-						if($def_val == "_obligatory")
-							$f = 1;							
-						//TODO сделать какую-то обработку... дополнительно
-						else
-							{
-								$ds_val[$def_key] = $def_val;
-							}
-					}
 					
+					$arr[$def_key] = $def_val;
+					// LFM_core_proc::file_log("test:= [!]".$def_key);
+					// LFM_core_proc::file_log($ds_val[$def_key]);
+					$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
+
+				if ($ff > 0) 
+					$f = 1; //TODO что тогда длеать то?
 			}
-			foreach($ds_val AS $dse_key => &$dse_val)
+			else
 			{
-				if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
-					$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_val);
+									
+				if(!isset($ds_val[$def_key]))
+				{
+					if($def_val == "_obligatory")
+						$ff = 1;							
+					//TODO сделать какую-то обработку... дополнительно
+					else
+						{
+							$ds_val[$def_key] = $def_val;
+						}
 				}
+				
 			}
 		}
+		foreach($ds_val AS $dse_key => &$dse_val)
+		{
+			if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
+				foreach()
+				$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_val);
+			}
+		}
+
 		return $f; 
 	}
 
@@ -196,9 +196,9 @@ class LFManagement
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				LFM_core_proc::file_log("test:");
+				// LFM_core_proc::file_log("test key: ".$ds_key);
 				$this->comparing_merging_fields($this->default_data_structure[$ds_key],$ds_val);
-				LFM_core_proc::file_log($ds_val);
+				// LFM_core_proc::file_log($ds_val);
 			}
 		}
 
