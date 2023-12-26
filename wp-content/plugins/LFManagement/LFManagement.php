@@ -126,8 +126,7 @@ class LFManagement
 		);
 	}
 
-	private function comparing_merging_fields(array $def_arr, array &$arr)
-	{
+	private function comparing_merging_fields(array $def_arr, array &$arr){
 
 		// LFM_core_proc::file_log("test:");
 		// LFM_core_proc::file_log($arr);
@@ -173,11 +172,12 @@ class LFManagement
 		foreach($ds_val AS $dse_key => &$dse_val)
 		{
 			if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
-				foreach()
-				$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_val);
+				foreach($dse_val AS $dse_e_key => &$dse_e_val){
+					$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_e_val);
+				}
 			}
 		}
-
+		
 		return $f; 
 	}
 
@@ -188,8 +188,6 @@ class LFManagement
 		// LFM_core_proc::file_log($json_default_data_structure);
 		$json_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/lib_structure.json");
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
-		// LFM_core_proc::file_log("json_data_structure:");
-		// LFM_core_proc::file_log($json_data_structure);
 		// LFM_core_proc::file_log("json_data_structure:");
 		// LFM_core_proc::file_log($json_data_structure);
 
