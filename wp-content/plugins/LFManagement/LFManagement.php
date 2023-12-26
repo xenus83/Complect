@@ -163,9 +163,6 @@ class LFManagement
 					$ff = 1;							
 					//TODO сделать какую-то обработку... дополнительно
 				}
-				else{
-					$arr[$def_key] = $def_val;
-				}
 				
 			}
 		}
