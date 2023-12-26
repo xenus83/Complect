@@ -199,9 +199,9 @@ class LFManagement
 					$this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
 				}
 			}
-			LFM_core_proc::file_log($ds_val);
 				
 		}
+		LFM_core_proc::file_log($json_data_structure);
 
 		// LFM_core_proc::file_log("merged_json_data_structure:");
 		// LFM_core_proc::file_log($json_data_structure);
