@@ -155,7 +155,7 @@ class LFManagement
 			else
 			{
 						
-				LFM_core_proc::file_log("def_key: ".$arr[$def_key]." def_val: ".$def_val."isset(arr[".$def_key."]): ".isset($arr[$def_key]));			
+				LFM_core_proc::file_log("def_key: ".$def_key." def_val: ".$def_val." isset(arr[".$def_key."]): ".isset($arr[$def_key]));			
 				if(!isset($arr[$def_key])){
 					if($def_val == "_obligatory")
 						$ff = 1;							
