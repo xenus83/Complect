@@ -137,11 +137,12 @@ class LFManagement
 
 				if(isset($arr[$def_key]))
 				{
+					LFM_core_proc::file_log("test:= [!]".$def_key);
+					// LFM_core_proc::file_log($arr[$def_key]);
 						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
 				else
 				{
-					
 					$arr[$def_key] = $def_val;
 					// LFM_core_proc::file_log("test:= [!]".$def_key);
 					// LFM_core_proc::file_log($arr[$def_key]);
