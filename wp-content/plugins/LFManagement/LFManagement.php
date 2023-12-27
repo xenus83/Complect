@@ -156,21 +156,24 @@ class LFManagement
 			{
 						
 				LFM_core_proc::file_log("def_key: ".$def_key." def_val: ".$def_val." isset(arr[".$def_key."]): ".isset($arr[$def_key]));			
-				if(!isset($arr[$def_key])){
+				if(isset($arr[$def_key])){
+					if($arr[$def_key] == "_obligatory"){
+						$ff = 1;							
+						//TODO сделать какую-то обработку... дополнительно
+					}
+				}
+				
+				else{
+					
 					if($def_val == "_obligatory"){
 						$ff = 1;
-					}							
-					//TODO сделать какую-то обработку... дополнительно
-				}
-				elseif($arr[$def_key] == "_obligatory"){
-					$ff = 1;							
-					//TODO сделать какую-то обработку... дополнительно
-				}
-				elseif((!isset($arr[$def_key])) && $def_val != "_obligatory")
-					{
+							//TODO сделать какую-то обработку... дополнительно
+					}	
+					else{
 						$arr[$def_key] = $def_val;
-						LFM_core_proc::file_log($arr[$def_key]);
-					}
+					}						
+				
+				}
 			}
 		}
 
