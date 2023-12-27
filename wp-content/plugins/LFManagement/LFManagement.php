@@ -165,7 +165,10 @@ class LFManagement
 					//TODO сделать какую-то обработку... дополнительно
 				}
 				elseif((!isset($arr[$def_key])) && $def_val != "_obligatory")
-					$arr[$def_key] = $def_val;
+					{
+						$arr[$def_key] = $def_val;
+						LFM_core_proc::file_log($arr[$def_key]);
+					}
 			}
 		}
 
