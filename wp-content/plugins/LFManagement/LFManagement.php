@@ -164,7 +164,7 @@ class LFManagement
 					$ff = 1;							
 					//TODO сделать какую-то обработку... дополнительно
 				}
-				elseif(!isset($arr[$def_key]) && $def_val != "_obligatory")
+				elseif((!isset($arr[$def_key])) && $def_val != "_obligatory")
 					$arr[$def_key] = $def_val;
 			}
 		}
