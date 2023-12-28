@@ -12,9 +12,11 @@
                       "lfm_card_item_type" :{
                                                 "taxonomy_name" : "lfm_card_item_type"
                                                 ,"parent_objec_type" : "lfm_card"
-                                                ,"labels" : {
-                                                              "name" : "Вид изделия"
-                                                              ,"singular_name" : "Вид"
+                                                ,"taxonomy_args" : {
+                                                    "labels" : {
+                                                                  "name" : "Вид изделия"
+                                                                  ,"singular_name" : "Вид"
+                                                                }
                                                             }
                                                 ,"meta" : {
                                                       "lfm_card_item_type__acc_unit" : {

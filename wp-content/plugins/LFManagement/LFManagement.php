@@ -129,23 +129,19 @@ class LFManagement
 	private function comparing_merging_fields(array $def_arr, array &$arr){
 
 		$f=0;
-
+		$ff = 0;
 		foreach($def_arr as $def_key => $def_val)
 		{					
 			if(is_array($def_val))
 			{
 
 				if(isset($arr[$def_key]))
-				{
-					LFM_core_proc::file_log("test:= [!]".$def_key);
-					// LFM_core_proc::file_log($arr[$def_key]);
-						$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
+				{			
+					$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
 				else
 				{
 					$arr[$def_key] = $def_val;
-					// LFM_core_proc::file_log("test:= [!]".$def_key);
-					// LFM_core_proc::file_log($arr[$def_key]);
 					$ff = $this->comparing_merging_fields($def_val, $arr[$def_key]);
 				}
 
@@ -155,7 +151,6 @@ class LFManagement
 			else
 			{
 						
-				LFM_core_proc::file_log("def_key: ".$def_key." def_val: ".$def_val." isset(arr[".$def_key."]): ".isset($arr[$def_key]));			
 				if(isset($arr[$def_key])){
 					if($arr[$def_key] == "_obligatory"){
 						$ff = 1;							
@@ -174,6 +169,7 @@ class LFManagement
 					}						
 				
 				}
+				$f = $ff;
 			}
 		}
 
@@ -181,30 +177,30 @@ class LFManagement
 		{
 			if(is_array($dse_val) && ($dse_key == 'post' || $dse_key == 'taxonomy' || $dse_key == 'meta' )) {
 				foreach($dse_val AS $dse_e_key => &$dse_e_val){
-					$this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_e_val);
+					$ff = $this->comparing_merging_fields($this->default_data_structure[$dse_key], $dse_e_val);
 				}
 			}
 		}
-		// LFM_core_proc::file_log($arr);
+		$f = $ff;
+
 		return $f; 
 	}
 
 	private function make_objects_structure() : void {
 		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
 		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
-		// LFM_core_proc::file_log("json_default_data_structure:");
-		// LFM_core_proc::file_log($json_default_data_structure);
+
 		$json_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/lib_structure.json");
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
-		// LFM_core_proc::file_log("json_data_structure:");
-		// LFM_core_proc::file_log($json_data_structure);
+
 
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
-				// LFM_core_proc::file_log("test key: ".$ds_key);
 				foreach($ds_val AS $dse_key => &$dse_val){
-					$this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
+					$f = 0;
+					$f = $this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
+					$dse_val['f'] = $f;
 				}
 			}
 				
