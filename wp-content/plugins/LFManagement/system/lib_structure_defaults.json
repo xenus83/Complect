@@ -31,7 +31,7 @@
     "meta" : {
                 "object_type" : "_obligatory"
                ,"meta_key" : "_obligatory"
-               ,"args" : {
+               ,"meta_args" : {
                                         "type"               : "string"
                                         ,"description"       : "deault_meta_field"
                                         ,"single"            : true
