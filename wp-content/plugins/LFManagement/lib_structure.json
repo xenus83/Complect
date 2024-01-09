@@ -42,7 +42,7 @@
                       ,"lfm_card_age_rating" : {
                                                 "taxonomy_name" : "lfm_card_age_rating"
                                                 ,"parent_objec_type" : "lfm_card"
-                                                ,"meta_args" : {
+                                                ,"taxonomy_args" : {
                                                                   "labels" : {
                                                                                 "name" : "Возрастные ограничения"
                                                                                ,"singular_name" : "Возрастная группа"
