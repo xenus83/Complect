@@ -152,15 +152,15 @@ class LFManagement
 			{
 						
 				if(isset($arr[$def_key])){
-					if($arr[$def_key] == "_obligatory"){
+					if($arr[$def_key] === "_obligatory"){
 						$ff = 1;							
 						//TODO сделать какую-то обработку... дополнительно
 					}
-				}
-				
+				}				
 				else{
 					
-					if($def_val == "_obligatory"){
+					if($def_val === "_obligatory"){
+						// LFM_core_proc::file_log("key:".$def_key." val:".$def_val); //для отладки
 						$ff = 1;
 							//TODO сделать какую-то обработку... дополнительно
 					}	
