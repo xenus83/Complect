@@ -193,7 +193,7 @@ class LFManagement
 		$json_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/lib_structure.json");
 		if(1 === $json_data_structure) return; //TODO может что-то вывести пользователю?
 
-
+		$ff = 0;
 		foreach( $json_data_structure AS $ds_key => &$ds_val ) {			
 			
 			if( $ds_key == 'post' || $ds_key == 'taxonomy' || $ds_key == 'meta' ) {
@@ -201,14 +201,22 @@ class LFManagement
 					$f = 0;
 					$f = $this->comparing_merging_fields($this->default_data_structure[$ds_key],$dse_val);
 					$dse_val['f'] = $f;
+					if($f > 0) $ff = $f;
 				}
 			}
 				
 		}
-		LFM_core_proc::file_log($json_data_structure);
+		// LFM_core_proc::file_log($json_data_structure);
 
 		// LFM_core_proc::file_log("merged_json_data_structure:");
 		// LFM_core_proc::file_log($json_data_structure);
+
+		if($ff > 0)
+		{
+			LFM_core_proc::file_log("структура воспроизведена с ошибкой");
+			return;
+		}
+
 
 		// $is_post = 0;
 		// foreach( $json_data_structure AS $ds_key => $ds_val ) {
