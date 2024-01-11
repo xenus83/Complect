@@ -206,6 +206,7 @@ class LFManagement
 			}
 				
 		}
+
 		// LFM_core_proc::file_log($json_data_structure);
 
 		// LFM_core_proc::file_log("merged_json_data_structure:");
@@ -213,8 +214,13 @@ class LFManagement
 
 		if($ff > 0)
 		{
-			LFM_core_proc::file_log("структура воспроизведена с ошибкой");
+			LFM_core_proc::file_log("структура воспроизведена с ошибкой, необходимо проверить логи");
 			return;
+		}
+		
+		foreach( $json_data_structure['taxonomy'] AS $ds_key => $ds_val )
+		{
+
 		}
 
 
