@@ -126,7 +126,7 @@ class LFManagement
 		);
 	}
 
-	private function comparing_merging_fields(array $def_arr, array &$arr){
+	private function comparing_merging_fields(array $def_arr, array &$arr) : int{
 
 		$f=0;
 		$ff = 0;
@@ -215,24 +215,10 @@ class LFManagement
 		if($ff > 0)
 		{
 			LFM_core_proc::file_log("структура воспроизведена с ошибкой, необходимо проверить логи");
-			return;
+			
 		}
 		
-		foreach( $json_data_structure['taxonomy'] AS $ds_key => $ds_val )
-		{
-
-		}
-
-
-		// $is_post = 0;
-		// foreach( $json_data_structure AS $ds_key => $ds_val ) {
-		// 	if(is_array($ds_val))			
-		// 	foreach ( $ds_val AS $de_key => $de_val )
-		// 	{
-		// 		if( $de_val['ff'] > 0 )
-		// 	}
-
-		// }
+		return $ff;
 	}
 
 
@@ -262,7 +248,8 @@ class LFManagement
 			,'has_archive' => true
 			,'support' => ['title','author', 'custom-fields']
         );
-		//Описание типа изделия\
+
+		//Описание типа изделия
 		//тип изделия, книга, брошюра, аудиокассета и т.д.
 //		register_post_type('lfm_item_type', $post_type_args);
 //		remove_post_type_support( 'lfm_item_type', 'editor');//отключаем текстовый блок
