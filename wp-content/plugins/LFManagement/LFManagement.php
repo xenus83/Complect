@@ -194,6 +194,16 @@ class LFManagement
 		}
 	}
 
+	private function register_taxonomies($taxonomies_fields)
+	{
+		foreach($taxonomies_fields AS $tax_key => $tax_val){
+			register_taxonomy($tax_val['taxonomy_name'], $tax_val['parent_objec_type'], $tax_val['taxonomy_args']);
+			if(isset($tax_val['meta'])){
+				$this->register_metafields($tax_val['meta']);
+			}
+		}
+	}
+
 	private function make_objects_structure() : void {
 		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
 		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
@@ -233,11 +243,19 @@ class LFManagement
 				$this->register_metafields($ds_val['meta']);
 			}
 		}
+
 		foreach( $json_data_structure['post'] AS $post_key => $post_val)
 		{
 			if(isset( $post_val['taxonomy'] )){
-
+				$this->register_taxonomies($post_val['taxonomy']);
 			}
+			register_post_type($post_val['post_type_name'],$post_val['post_type_args']);
+			if(isset($post_val['meta'])){
+				$this->register_metafields($post_val['meta']);
+			}
+		}
+		if(isset($json_data_structure['meta'])){
+			$this->register_metafields($json_data_structure['meta']);
 		}
 
 	}
