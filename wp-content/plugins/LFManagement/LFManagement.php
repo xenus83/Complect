@@ -186,6 +186,14 @@ class LFManagement
 		return $f; 
 	}
 
+
+	private function register_metafields($meta_fields_arr)
+	{
+		foreach($meta_fields_arr AS $meta_key => $meta_val){
+			register_meta($meta_val['object_type'], $meta_val['meta_key'], $meta_val['meta_args']);
+		}
+	}
+
 	private function make_objects_structure() : void {
 		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
 		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
@@ -215,10 +223,23 @@ class LFManagement
 		if($ff > 0)
 		{
 			LFM_core_proc::file_log("структура воспроизведена с ошибкой, необходимо проверить логи");
-			
+			return;
 		}
 		
-		return $ff;
+		
+		foreach( $json_data_structure['taxonomy'] as $ds_key => $ds_val){
+			register_taxonomy($ds_val['taxonomy_name'], $ds_val['parent_objec_type'], $ds_val['taxonomy_args']);
+			if(isset($ds_val['meta'])){
+				$this->register_metafields($ds_val['meta']);
+			}
+		}
+		foreach( $json_data_structure['post'] AS $post_key => $post_val)
+		{
+			if(isset( $post_val['taxonomy'] )){
+
+			}
+		}
+
 	}
 
 
@@ -238,16 +259,18 @@ class LFManagement
 	//TODO проверить возможность применения wp_nav_menu_item_taxonomy_meta_box
 
 	function create_data_types() : void {
-		self::make_objects_structure();
+		$f = self::make_objects_structure();
+
 //		console_log( self::class, null, 0, "register post_types" );
-        $post_type_args = array(
-			'public' => true
-			,'label' => esc_html__('Тип изделия', 'lfmanagement')
-			,'show_ui' => true
-			,'show_in_menu' => 'lfmanagement/lfm_menu.php'
-			,'has_archive' => true
-			,'support' => ['title','author', 'custom-fields']
-        );
+		
+        // $post_type_args = array(
+		// 	'public' => true
+		// 	,'label' => esc_html__('Тип изделия', 'lfmanagement')
+		// 	,'show_ui' => true
+		// 	,'show_in_menu' => 'lfmanagement/lfm_menu.php'
+		// 	,'has_archive' => true
+		// 	,'support' => ['title','author', 'custom-fields']
+        // );
 
 		//Описание типа изделия
 		//тип изделия, книга, брошюра, аудиокассета и т.д.
