@@ -108,7 +108,7 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 //define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
-define( 'WP_DEBUG', true);
+define( 'WP_DEBUG', false);
 
 /** Include WP debug helper */
 if ( defined( 'WP_DEBUG' ) && /*WP_DEBUG &&*/ file_exists( ABSPATH . 'wp-debug.php' ) ) {

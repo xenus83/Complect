@@ -100,7 +100,7 @@ class LFManagement
 		wp_register_style('lfm_styles',plugins_url('/css/lfm_styles.css',__FILE__));
 	}
 	function lfm_enqueue_css() : void{
-		$log = date('Y-m-d H:i:s') . ' Запись в лог lfm_enqueue_css script';
+	//	$log = date('Y-m-d H:i:s') . ' Запись в лог lfm_enqueue_css script';
 		//file_put_contents(__DIR__ . '/log.log', $log . PHP_EOL, FILE_APPEND);
 		wp_enqueue_style('lfm_styles');
 	}
@@ -250,6 +250,8 @@ class LFManagement
 				$this->register_taxonomies($post_val['taxonomy']);
 			}
 			register_post_type($post_val['post_type_name'],$post_val['post_type_args']);
+			remove_post_type_support( $post_val['post_type_name'], 'editor'); // удаляем текстовй блок
+			
 			if(isset($post_val['meta'])){
 				$this->register_metafields($post_val['meta']);
 			}
@@ -257,7 +259,8 @@ class LFManagement
 		if(isset($json_data_structure['meta'])){
 			$this->register_metafields($json_data_structure['meta']);
 		}
-
+		GLOBAL $wp_post_types;
+		LFM_core_proc::file_log($wp_post_types);
 	}
 
 
@@ -311,7 +314,7 @@ class LFManagement
 		//end тип изделия
 
 		//автор
-
+/*
 		$post_type_args['label'] = esc_html__('Автор', 'lfmanagement');
 		register_post_type('lfm_author', $post_type_args);
 		remove_post_type_support( 'lfm_author', 'editor');
@@ -361,7 +364,7 @@ class LFManagement
 			,'has_archive' => true
 			, 'support' => ['title','author', 'custom-fields']
 		));
-
+*/
 //
 //		$args = array(
 //			'public'   => true,
