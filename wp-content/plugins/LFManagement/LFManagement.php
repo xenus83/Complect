@@ -259,8 +259,8 @@ class LFManagement
 		if(isset($json_data_structure['meta'])){
 			$this->register_metafields($json_data_structure['meta']);
 		}
-		GLOBAL $wp_post_types;
-		LFM_core_proc::file_log($wp_post_types);
+		// GLOBAL $wp_post_types;
+		// LFM_core_proc::file_log($wp_post_types);
 	}
 
 
