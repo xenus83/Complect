@@ -40,7 +40,7 @@ class LFManagement
 		add_action( 'init', [$this,'lfm_register_script'] );
 		add_action( 'init',[$this, 'create_data_types'] );
 		add_action( 'admin_menu', [$this,'add_lfm_menu_page'] );
-		add_action( 'init', [$this,'lfm_card_taxonomies'] );
+		// add_action( 'init', [$this,'lfm_card_taxonomies'] );
 		add_action( 'add_meta_boxes_lfm_card', [$this, 'add_card_meta_box'] );
 		add_action( 'add_meta_boxes_lfm_author', [$this, 'add_author_meta_box'] );
 		add_action( 'save_post_lfm_card', [$this, 'lfm_card_post_data__save'] );
