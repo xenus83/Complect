@@ -190,14 +190,23 @@ class LFManagement
 	private function register_metafields($meta_fields_arr)
 	{
 		foreach($meta_fields_arr AS $meta_key => $meta_val){
-			register_meta($meta_val['object_type'], $meta_val['meta_key'], $meta_val['meta_args']);
+			$ret = register_meta($meta_val['object_type'], $meta_val['meta_key'], $meta_val['meta_args']);
+			if(is_object($ret))
+			if('WP_Error' == get_class($ret)){
+				LFM_core_proc::file_log($ret);
+			}
 		}
 	}
 
 	private function register_taxonomies($taxonomies_fields)
 	{
 		foreach($taxonomies_fields AS $tax_key => $tax_val){
-			register_taxonomy($tax_val['taxonomy_name'], $tax_val['parent_objec_type'], $tax_val['taxonomy_args']);
+			$ret = register_taxonomy($tax_val['taxonomy_name'], $tax_val['parent_objec_type'], $tax_val['taxonomy_args']);
+			if(is_object($ret))
+			if('WP_Error' == get_class($ret)){
+				LFM_core_proc::file_log($ret);
+			}
+			
 			if(isset($tax_val['meta'])){
 				$this->register_metafields($tax_val['meta']);
 			}
@@ -238,7 +247,11 @@ class LFManagement
 		
 		
 		foreach( $json_data_structure['taxonomy'] as $ds_key => $ds_val){
-			register_taxonomy($ds_val['taxonomy_name'], $ds_val['parent_objec_type'], $ds_val['taxonomy_args']);
+			$ret = register_taxonomy($ds_val['taxonomy_name'], $ds_val['parent_objec_type'], $ds_val['taxonomy_args']);
+			if(is_object($ret))
+			if('WP_Error' == get_class($ret)){
+				LFM_core_proc::file_log($ret);
+			}
 			if(isset($ds_val['meta'])){
 				$this->register_metafields($ds_val['meta']);
 			}
@@ -249,7 +262,11 @@ class LFManagement
 			if(isset( $post_val['taxonomy'] )){
 				$this->register_taxonomies($post_val['taxonomy']);
 			}
-			register_post_type($post_val['post_type_name'],$post_val['post_type_args']);
+			$ret = register_post_type($post_val['post_type_name'],$post_val['post_type_args']);
+			if(is_object($ret))
+			if('WP_Error' == get_class($ret)){
+				LFM_core_proc::file_log($ret);
+			}
 			remove_post_type_support( $post_val['post_type_name'], 'editor'); // удаляем текстовй блок
 			
 			if(isset($post_val['meta'])){
