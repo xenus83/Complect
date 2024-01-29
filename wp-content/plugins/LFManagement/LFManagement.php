@@ -201,12 +201,14 @@ class LFManagement
 	private function register_taxonomies($taxonomies_fields)
 	{
 		foreach($taxonomies_fields AS $tax_key => $tax_val){
+			if(isset($tax_val['taxonomy_args']['meta_box_cb'])){
+				$tax_val['taxonomy_args']['meta_box_cb'] = [$this, $tax_val['taxonomy_args']['meta_box_cb']];
+			}
 			$ret = register_taxonomy($tax_val['taxonomy_name'], $tax_val['parent_objec_type'], $tax_val['taxonomy_args']);
 			if(is_object($ret))
 			if('WP_Error' == get_class($ret)){
 				LFM_core_proc::file_log($ret);
 			}
-			
 			if(isset($tax_val['meta'])){
 				$this->register_metafields($tax_val['meta']);
 			}
@@ -276,8 +278,8 @@ class LFManagement
 		if(isset($json_data_structure['meta'])){
 			$this->register_metafields($json_data_structure['meta']);
 		}
-		// GLOBAL $wp_post_types;
-		// LFM_core_proc::file_log($wp_post_types);
+		// GLOBAL $wp_taxonomies;
+		// LFM_core_proc::file_log($wp_taxonomies);
 	}
 
 
