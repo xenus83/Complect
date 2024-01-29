@@ -16,6 +16,7 @@
                                                     "labels" : {
                                                                   "name" : "Вид изделия"
                                                                   ,"singular_name" : "Вид"
+                                                                  ,"meta_box_cb" : "fm_default_radio_meta_box__render"
                                                                 }
                                                             }
                                                 ,"meta" : {
