@@ -25,7 +25,6 @@ Text Domain: lfmanagement
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 ?>
-
 <?php
 if(!function_exists('add_action')){
 	die;
@@ -615,6 +614,7 @@ class LFManagement
 
 //		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )//todo а зачем, может убрать?
 //  		return;
+		
 		if(0 < count($_POST))
 		if ( !wp_verify_nonce( $_POST['lfm_card_wpnonce'], plugin_basename( __FILE__ ) ) )
 			return;
@@ -690,6 +690,17 @@ class LFManagement
                 }
 	        }
         }
+
+		if( isset( $_POST['lfm_card_item_type'])){
+			$item_type = sanitize_text_field($_POST['lfm_card_item_type']);
+			if(!empty($item_type))
+			{
+				$term = get_term_by('name', $item_type, 'lfm_card_item_type');
+				if(!empty( $term ) && !is_wp_error( $term )){
+					wp_set_object_terms( $post_id, $term->term_id, 'lfm_card_item_type', false);
+				} 
+			}
+		}
 
 	}
 

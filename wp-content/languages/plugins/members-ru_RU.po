@@ -2,14 +2,30 @@
 # This file is distributed under the same license as the Plugins - Members &#8211; Membership &amp; User Role Editor Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-17 22:28:33+0000\n"
+"PO-Revision-Date: 2023-09-19 15:21:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
-"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
 "Language: ru\n"
 "Project-Id-Version: Plugins - Members &#8211; Membership &amp; User Role Editor Plugin - Stable (latest release)\n"
+
+#: admin/functions-admin.php:261
+msgid "About Us"
+msgstr "О нас"
+
+#: admin/functions-admin.php:266
+msgid "Made with ♥ by the Members Team"
+msgstr "Сделано с ♥ командой участников"
+
+#: admin/functions-admin.php:256
+msgid "Docs"
+msgstr "Документы"
+
+#: admin/functions-admin.php:251
+msgid "Support"
+msgstr "Поддержка"
 
 #: admin/class-notifications.php:617
 msgid "Close"
@@ -100,6 +116,10 @@ msgstr[2] "%s непрочитанных сообщений"
 msgid "%1$s ago"
 msgstr "%1$s назад"
 
+#: admin/class-notifications.php:537
+msgid "You're all caught up!"
+msgstr "Вы все попали!"
+
 #: admin/class-meta-box-content-permissions.php:243
 #: admin/class-meta-box-content-permissions.php:364
 msgid "Add MemberPress"
@@ -156,6 +176,14 @@ msgstr "Чтобы защитить этот блок с помощью плат
 msgid "You're using Members. To unlock more features, consider <a href=\"https://memberpress.com/plans/pricing/?utm_source=members&utm_medium=link&utm_campaign=in_plugin&utm_content=pro_features\">adding MemberPress.</a>"
 msgstr "Вы используете Members. Чтобы разблокировать дополнительные функции, рассмотрите <a href=\"https://memberpress.com/plans/pricing/?utm_source=members&utm_medium=link&utm_campaign=in_plugin&utm_content=pro_features\"> так же MemberPress.</a>"
 
+#: admin/class-review-prompt.php:85
+msgid "That's awesome! Could you please do me a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?"
+msgstr "Это потрясающе! Не могли бы вы оказать мне БОЛЬШУЮ услугу и дать ему 5-звездочный рейтинг на WordPress, чтобы помочь нам распространить информацию и повысить нашу мотивацию?"
+
+#: admin/class-review-prompt.php:81
+msgid "Are you enjoying using Members?"
+msgstr "Вам нравится использовать Members?"
+
 #: addons/members-woocommerce-integration/src/functions-filters.php:37
 #: addons/members-woocommerce-integration/src/functions-filters.php:72
 msgid "WooCommerce"
@@ -181,6 +209,138 @@ msgstr "Панель инструментов"
 msgid "Select Roles"
 msgstr "Выбрать роли"
 
+#: addons/members-role-hierarchy/admin/class-edit-role.php:124
+msgid "Set the role's position in the hierarchy."
+msgstr "Установите положение роли в иерархии."
+
+#: addons/members-role-hierarchy/admin/class-edit-role.php:97
+msgid "Role Position"
+msgstr "Положение Роли"
+
+#: addons/members-role-hierarchy/admin/functions-settings.php:86
+msgid "Lower or equal."
+msgstr "Ниже или равно."
+
+#: addons/members-role-hierarchy/admin/functions-settings.php:78
+msgid "Lower. <em>Exceptions are the following roles:</em> %s."
+msgstr "Ниже. <em>Исключения составляют следующие роли:</em> %s."
+
+#: addons/members-role-hierarchy/admin/functions-settings.php:70
+msgid "Should users manage users/roles that are \"lower\" or \"lower or equal\" to their own role?"
+msgstr "Должны ли пользователи управлять пользователями/ролями, которые «ниже» или «ниже или равны» их собственной роли?"
+
+#: addons/members-role-hierarchy/admin/functions-settings.php:31
+msgid "Role Hierarchy"
+msgstr "Иерархия Роли"
+
+#: addons/members-admin-access/app/class-view-settings.php:172
+msgid "Disable toolbar on the front end for users without admin access."
+msgstr "Отключить панель инструментов в интерфейсе для пользователей без прав администратора."
+
+#: addons/members-admin-access/app/class-view-settings.php:152
+msgid "Redirect users without access to:"
+msgstr "Перенаправить пользователей без доступа к:"
+
+#: addons/members-admin-access/app/class-view-settings.php:109
+msgid "Select which roles should have admin access."
+msgstr "Выберите, какие роли должны иметь доступ администратора."
+
+#: addons/members-admin-access/app/class-view-settings.php:95
+msgid "Control admin access by user role."
+msgstr "Контролируйте доступ администратора по роли пользователя."
+
+#: addons/members-admin-access/app/class-view-settings.php:44
+msgid "Redirect"
+msgstr "Перенаправить"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:230
+msgid "Coupons: Delete"
+msgstr "Купоны: Удалить"
+
+#: addons/members-admin-access/app/class-view-settings.php:39
+#: addons/members-admin-access/app/functions-admin.php:59
+msgid "Admin Access"
+msgstr "Доступ администратора"
+
+#: addons/members-category-and-tag-caps/uninstall.php:15
+msgid "%s should only be called when uninstalling the plugin."
+msgstr "%s следует вызывать только при удалении плагина."
+
+#: addons/members-woocommerce-integration/src/functions-filters.php:38
+msgid "WooCommerce %s"
+msgid_plural "WooCommerce %s"
+msgstr[0] "WooCommerce %s"
+msgstr[1] "WooCommerce %s"
+msgstr[2] "WooCommerce %s"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:270
+msgid "Allows access to coupon taxonomy management screens."
+msgstr "Предоставляет доступ к экранам управления таксономией купонов."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:269
+msgid "Coupons: Manage Taxonomy Terms"
+msgstr "Купоны: управление условиями таксономии"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:265
+msgid "Allows users to delete coupon taxonomy terms."
+msgstr "Позволяет пользователям удалять термины таксономии купонов."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:264
+msgid "Coupons: Delete Taxonomy Terms"
+msgstr "Купоны: удаление терминов таксономии"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:260
+msgid "Allows users to edit coupon taxonomy terms."
+msgstr "Позволяет пользователям редактировать условия таксономии купонов."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:259
+msgid "Coupons: Edit Taxonomy Terms"
+msgstr "Купоны: изменение условий таксономии"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:255
+msgid "Allows users to assign taxonomy terms to coupons."
+msgstr "Позволяет пользователям назначать купонам термины таксономии."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:254
+msgid "Coupons: Assign Taxonomy Terms"
+msgstr "Купоны: назначение условий таксономии"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:249
+msgid "Allows users to delete published coupons."
+msgstr "Позволяет пользователям удалять опубликованные купоны."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:248
+msgid "Coupons: Delete Published"
+msgstr "Купоны: Удалить опубликованные"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:244
+msgid "Allows users to delete other users' coupons."
+msgstr "Позволяет пользователям удалять купоны других пользователей."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:243
+msgid "Coupons: Delete Others'"
+msgstr "Купоны: удалить чужие"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:239
+msgid "Allows users to delete private coupons."
+msgstr "Позволяет пользователям удалять частные купоны."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:238
+msgid "Coupons: Delete Private"
+msgstr "Купоны: Удалить частные"
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:232
+msgid "Allows users to delete coupons. May need to be combined with other %s capabilities, depending on the scenario."
+msgstr "Позволяет пользователям удалять купоны. В зависимости от сценария может потребоваться объединение с другими возможностями %s."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:226
+msgid "Allows users to read private coupons."
+msgstr "Позволяет пользователям читать частные купоны."
+
+#: addons/members-woocommerce-integration/src/functions-caps.php:225
+msgid "Coupons: Read Private"
+msgstr "Купоны: Читать личное"
+
 #: addons/members-block-permissions/src/Editor.php:112
 msgid "Type"
 msgstr "Тип"
@@ -189,31 +349,31 @@ msgstr "Тип"
 msgid "Permissions"
 msgstr "Права доступа"
 
-#: admin/class-settings.php:231 admin/class-settings.php:609
+#: admin/class-settings.php:267 admin/class-settings.php:645
 msgctxt "admin screen"
 msgid "About Us"
 msgstr "О нас"
 
-#: admin/class-settings.php:228 admin/class-settings.php:353
+#: admin/class-settings.php:264 admin/class-settings.php:389
 msgctxt "admin screen"
 msgid "Payments"
 msgstr "Платежи"
 
-#: admin/class-settings.php:225
+#: admin/class-settings.php:261
 msgctxt "admin screen"
 msgid "Add-Ons"
 msgstr "Дополнения"
 
-#: admin/class-settings.php:223
+#: admin/class-settings.php:259
 msgctxt "admin screen"
 msgid "Settings"
 msgstr "Настройки"
 
-#: admin/class-settings.php:149
+#: admin/class-settings.php:185
 msgid "Add-on deactivated"
 msgstr "Дополнение деактивировано"
 
-#: admin/class-settings.php:137
+#: admin/class-settings.php:173
 msgid "Add-on activated"
 msgstr "Дополнение активировано"
 
@@ -222,7 +382,7 @@ msgctxt "admin screen"
 msgid "Add New Role"
 msgstr "Добавить новую роль"
 
-#: admin/class-settings.php:148 admin/views/class-view-addons.php:153
+#: admin/class-settings.php:184 admin/views/class-view-addons.php:153
 #: admin/views/class-view-addons.php:159
 msgid "Activate"
 msgstr "Активировать"
@@ -369,12 +529,12 @@ msgstr "GiveWP: Управление настройками"
 msgid "Allows access to manage the GiveWP plugin settings."
 msgstr "Разрешить доступ к управлению настройками плагина GiveWP."
 
-#: admin/class-settings.php:225
+#: admin/class-settings.php:261
 msgctxt "admin screen"
 msgid "<span style=\"color: #8CBD5A;\">Add-Ons</span>"
 msgstr "<span style=\"color: #8CBD5A;\">Дополнения</span>"
 
-#: admin/class-settings.php:125
+#: admin/class-settings.php:161
 msgid "No add-on provided."
 msgstr "Нет добавленных дополнений."
 
@@ -407,6 +567,14 @@ msgstr "Формы: Удалять другие"
 #: addons/members-block-permissions/src/Editor.php:94
 msgid "Condition"
 msgstr "Условие"
+
+#: admin/class-settings.php:172 admin/views/class-view-addons.php:159
+msgid "Active"
+msgstr "Активен"
+
+#: addons/members-edd-integration/src/functions-filters.php:70
+msgid "Downloads"
+msgstr "Загрузки"
 
 #. Author URI of the plugin
 msgid "https://memberpress.com"
@@ -740,6 +908,51 @@ msgstr "Ограничение контента"
 msgid "You are not currently logged in."
 msgstr "Вы не авторизованы."
 
+#: admin/class-meta-box-custom-cap.php:90
+msgctxt "capability"
+msgid "Add New"
+msgstr "Добавить новую"
+
+#: inc/functions-private-site.php:198
+msgid "If you reached this page by accident and meant to visit one of your own sites, try one of the following links."
+msgstr "Если вы попали на эту страницу случайно, а хотели посетить один из ваших сайтов, попробуйте одну из ссылок, приведённых ниже."
+
+#: members.php:351
+msgid "Members requires PHP version %1$s. You are running version %2$s. Please upgrade and try again."
+msgstr "Плагин Members требует PHP версии %1$s. Ваша версия %2$s не подходит. Обновитесь и попробуйте снова."
+
+#: inc/functions-capabilities.php:122
+msgid "Promote Users"
+msgstr "Повышение прав пользователей"
+
+#: admin/views/class-view-addons.php:251
+msgid "Some add-ons may require purchase before downloading them. Clicking the purchase button will take you off-site to view the add-on in more detail."
+msgstr "Некоторые аддоны могут требовать покупки перед тем, как скачать их. Нажатие на кнопку приобретения переведёт вас на другой сайт для более детального просмотра возможностей аддона."
+
+#: admin/views/class-view-addons.php:237
+msgid "Some plugins may be available for direct download. In such cases, you can click the download button to get a ZIP file of the plugin."
+msgstr "Некоторые плагины могут быть доступны к загрузке на-прямую. В таком случае вы можете нажать на кнопку загрузки, чтобы получить ZIP файл, содержащий плагин."
+
+#: admin/class-role-edit.php:234
+msgid "The %s role is typically the most important role on the site. Please take extreme caution that you do not inadvertently remove necessary capabilities."
+msgstr "Роль %s обычно самая важная роль на сайте. Пожалуйста, проявляйте максимальную аккуратность, чтобы ненароком не удалить нужные возможности."
+
+#: admin/views/class-view-addons.php:223
+msgid "The Add-Ons screen allows you to view available add-ons for the Members plugin. You can download some plugins directly. Others may be available to purchase."
+msgstr "Экран с аддонами позволяет вам увидеть доступные аддоны к плагину Members. Вы можете скачивать некоторые плагины на прямую. Некоторые могут быть доступны за плату."
+
+#: admin/views/class-view-addons.php:79
+msgid "There are currently no add-ons to show. Please try again later."
+msgstr "На данный момент нет add-on'ов для показа. Пожалуйста, попробуйте чуть позже."
+
+#: admin/functions-help.php:114
+msgid "Visit the %s page in the WordPress Codex to see a complete list of roles, capabilities, and their definitions."
+msgstr "Посетите %s страницу WordPress Codex, чтобы посмотреть исчерпывающий список ролей, возможностей и их определений."
+
+#: inc/functions-private-site.php:191
+msgid "You do not currently have access to the \"%s\" site. If you believe you should have access, please contact your network administrator."
+msgstr "На данный момент у вас нет прав доступа к сайту \"%s\". Если вы уверены, что вы должны обладать такими правами, обратитесь к системному администратору."
+
 #: inc/class-widget-users.php:204
 msgid "Login"
 msgstr "Вход"
@@ -961,7 +1174,7 @@ msgstr "%s роль обновлена."
 msgid "Role"
 msgstr "Роль"
 
-#: admin/class-manage-roles.php:87 admin/class-manage-roles.php:93
+#: admin/class-manage-roles.php:88 admin/class-manage-roles.php:94
 #: admin/class-manage-users.php:360
 #: admin/class-meta-box-content-permissions.php:189
 #: admin/class-meta-box-content-permissions.php:308
@@ -970,7 +1183,7 @@ msgstr "Роль"
 msgid "Roles"
 msgstr "Роли"
 
-#: admin/class-manage-roles.php:90 admin/class-role-edit.php:298
+#: admin/class-manage-roles.php:91 admin/class-role-edit.php:298
 msgid "Edit Role"
 msgstr "Редактировать роль"
 
@@ -1091,7 +1304,7 @@ msgstr "Вы должны ввести существующую роль."
 msgid "The %s role already exists."
 msgstr "Роль %s уже существует."
 
-#: admin/class-settings.php:330
+#: admin/class-settings.php:366
 msgctxt "admin screen"
 msgid "Members"
 msgstr "Members"
@@ -1357,13 +1570,6 @@ msgstr "Красивое имя"
 msgid "Private Site"
 msgstr "Закрытый сайт"
 
-#: admin/class-role-list-table.php:423
-msgid "Mine %s"
-msgid_plural "Mine %s"
-msgstr[0] "Моя"
-msgstr[1] "Мои"
-msgstr[2] "Мои"
-
 #: admin/class-role-list-table.php:438
 msgid "Editable %s"
 msgid_plural "Editable %s"
@@ -1429,3 +1635,26 @@ msgid_plural "Has Users %s"
 msgstr[0] "С пользователями %s"
 msgstr[1] "С пользователями %s"
 msgstr[2] "С пользователями %s"
+
+#: inc/class-widget-login.php:241
+msgid "Remember Me Field ID:"
+msgstr "ID поля Запомнить меня:"
+
+#: admin/class-role-list-table.php:423
+msgid "Mine %s"
+msgid_plural "Mine %s"
+msgstr[0] "Мой %s"
+msgstr[1] "Мои %s"
+msgstr[2] "Мои %s"
+
+#: inc/class-widget-login.php:245
+msgid "Password Field ID:"
+msgstr "ID поля Пароля:"
+
+#: inc/class-widget-login.php:249
+msgid "Submit Button ID:"
+msgstr "ID конпки Подрвердить:"
+
+#: inc/class-widget-login.php:237
+msgid "Username Field ID:"
+msgstr "ID поля Имя пользователя:"
