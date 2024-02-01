@@ -383,58 +383,6 @@ class LFManagement
 
 	}
 
-	function lfm_card_taxonomies() : void {
-		 register_taxonomy('lfm_card_age_rating', 'lfm_card',
-			[
-					'hierarchical'=>FALSE,
-					'labels'=>[
-						'name'=> esc_html__('Возрастные ограничения','lfmanagement')
-						,'singular_name' => esc_html__('Возрастная группа','lfmanagement')
-					]
-				,'show_ui'           => true
-				,'show_admin_column' => true
-				,'query_var'         => true
-				,'show_in_menu'      => true
-				,'show_in_rest'      => true
-				,'meta_box_cb'       => [$this, 'lfm_default_select_meta_box__render']
-			]
-        );
-		register_taxonomy('lfm_card_item_type', 'lfm_card', [
-					'hierarchical'=>FALSE,
-					'labels'=>[
-						'name'=> esc_html__('Вид изделия','lfmanagement')
-						,'singular_name' => esc_html__('Вид изделия','lfmanagement')
-					]
-				,'show_ui'           => true
-				,'show_admin_column' => true
-				,'query_var'         => true
-				,'show_in_menu'      => true
-				,'show_in_rest'      => true
-				,'meta_box_cb'       => [$this, 'lfm_default_select_meta_box__render']
-			]
-		);
-		register_term_meta( 'lfm_card_item_type', 'lfm_card_item_type__acc_unit', array(
-//			'show_in_rest'      => true     // Добавим в ответ REST
-			 'sanitize_callback' => NULL // Обработаем значение поля при сохранение его в базу, функцией absint()
-			,'description'       => 'Единица объёма'//например страницы, минуты, зависит от того, что за вид изделия например для компакт дисков это мегабайты
-			,'single'            => TRUE
-			,'show_in_rest' => ['schema' => [
-				'type' => 'string',
-				'format' => 'url',
-				'context' => [ 'view', 'edit' ],
-				'readonly' => true,
-			]]
-		) );
-		register_term_meta( 'lfm_card_item_type', 'lfm_card_item_type__favorite', array(
-			'show_in_rest'      => true     // Добавим в ответ REST
-		,'sanitize_callback' => NULL // Обработаем значение поля при сохранение его в базу, функцией absint()
-		,'description'       => 'Избранное значение'//например страницы, минуты, зависит от того, что за вид изделия например для компакт дисков это мегабайты
-		,'single'            => TRUE
-		,'type'              => 'boolean'
-		) );
-
-
-    }
 	static function remove_plugin_data() : void {
 		GLOBAL $wpdb;
 		$args = array(
