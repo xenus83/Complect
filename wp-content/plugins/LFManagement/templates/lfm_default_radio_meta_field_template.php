@@ -1,4 +1,5 @@
 <label><?php esc_attr_e($taxonomy->label) ?></label>
+<br>
 <?php
 foreach ( $terms as $term ) {
 	?>

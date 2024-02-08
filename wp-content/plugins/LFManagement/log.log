@@ -1,0 +1,1176 @@
+Array
+(
+    [_wpnonce] => ff85a484e9
+    [_wp_http_referer] => /wp-admin/post.php?post=130&action=edit
+    [user_ID] => 1
+    [action] => editpost
+    [originalaction] => editpost
+    [post_author] => 1
+    [post_type] => lfm_card
+    [original_post_status] => publish
+    [referredby] => http://komplect.local:8000/wp-login.php?redirect_to=http%3A%2F%2Fkomplect.local%3A8000%2Fwp-admin%2Fpost.php%3Fpost%3D130%26action%3Dedit&reauth=1
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-login.php?redirect_to=http%3A%2F%2Fkomplect.local%3A8000%2Fwp-admin%2Fpost.php%3Fpost%3D130%26action%3Dedit&reauth=1
+    [post_ID] => 130
+    [meta-box-order-nonce] => 350b108c6d
+    [closedpostboxesnonce] => 51ba921bfe
+    [post_title] => тест2
+    [samplepermalinknonce] => d8cd551af6
+    [wp-preview] => 
+    [hidden_post_status] => publish
+    [post_status] => publish
+    [hidden_post_password] => 
+    [hidden_post_visibility] => public
+    [visibility] => public
+    [post_password] => 
+    [mm] => 04
+    [jj] => 26
+    [aa] => 2023
+    [hh] => 02
+    [mn] => 47
+    [ss] => 20
+    [hidden_mm] => 04
+    [cur_mm] => 02
+    [hidden_jj] => 26
+    [cur_jj] => 06
+    [hidden_aa] => 2023
+    [cur_aa] => 2024
+    [hidden_hh] => 02
+    [cur_hh] => 14
+    [hidden_mn] => 47
+    [cur_mn] => 00
+    [original_publish] => Обновить
+    [save] => Обновить
+    [lfm_card_item_type] => Компакт-диск
+    [lfm_card_age_rating] => 18+
+    [post_name] => тест2
+    [lfm_card_wpnonce] => 263fd9f42c
+    [lfm_card__isbn] => 212123
+    [lfm_card__year] => 2021
+    [lfm_card__volume_p] => 1
+    [lfm_card__otv_info] => ответственный?
+    [lfm_card__izd_info] => издание? изделие???
+    [lfm_card__publishing_house] => Издамтельство
+    [lfm_card__sys] => сис треб!
+    [lfm_card__osnzaglser] => сер
+    [lfm_card__note] => Приметное
+    [lfm_card__resume] => содержательное
+    [post_mime_type] => 
+    [ID] => 130
+    [comment_status] => closed
+    [ping_status] => closed
+)
+
+Array
+(
+    [category] => WP_Taxonomy Object
+        (
+            [name] => category
+            [label] => Рубрики
+            [labels] => stdClass Object
+                (
+                    [name] => Рубрики
+                    [singular_name] => Рубрика
+                    [search_items] => Поиск рубрик
+                    [popular_items] => 
+                    [all_items] => Все рубрики
+                    [parent_item] => Родительская рубрика
+                    [parent_item_colon] => Родительская рубрика:
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => Назначьте родительский элемент для создания иерархии. "Джаз" например может быть родителем для "Бибоп" и "Биг-бэнд".
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить рубрику
+                    [view_item] => Просмотреть рубрику
+                    [update_item] => Обновить рубрику
+                    [add_new_item] => Добавить новую рубрику
+                    [new_item_name] => Название новой рубрики
+                    [separate_items_with_commas] => 
+                    [add_or_remove_items] => 
+                    [choose_from_most_used] => 
+                    [not_found] => Рубрик не найдено.
+                    [no_terms] => Рубрик нет
+                    [filter_by_item] => Фильтр по рубрике
+                    [items_list_navigation] => Навигация по списку рубрик
+                    [items_list] => Список рубрик
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к рубрикам
+                    [item_link] => Ссылка рубрики
+                    [item_link_description] => Ссылка на рубрику.
+                    [menu_name] => Рубрики
+                    [name_admin_bar] => category
+                )
+
+            [description] => 
+            [public] => 1
+            [publicly_queryable] => 1
+            [hierarchical] => 1
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 1
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 1
+            [meta_box_cb] => post_categories_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_checkboxes
+            [object_type] => Array
+                (
+                    [0] => post
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => edit_categories
+                    [delete_terms] => delete_categories
+                    [assign_terms] => assign_categories
+                )
+
+            [rewrite] => Array
+                (
+                    [with_front] => 1
+                    [hierarchical] => 1
+                    [ep_mask] => 512
+                    [slug] => category
+                )
+
+            [query_var] => category_name
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => categories
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => WP_REST_Terms_Controller
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [post_tag] => WP_Taxonomy Object
+        (
+            [name] => post_tag
+            [label] => Метки
+            [labels] => stdClass Object
+                (
+                    [name] => Метки
+                    [singular_name] => Метка
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Все метки
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Метки
+                    [name_admin_bar] => post_tag
+                )
+
+            [description] => 
+            [public] => 1
+            [publicly_queryable] => 1
+            [hierarchical] => 
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 1
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 1
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => post
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_post_tags
+                    [edit_terms] => edit_post_tags
+                    [delete_terms] => delete_post_tags
+                    [assign_terms] => assign_post_tags
+                )
+
+            [rewrite] => Array
+                (
+                    [with_front] => 1
+                    [hierarchical] => 
+                    [ep_mask] => 1024
+                    [slug] => tag
+                )
+
+            [query_var] => tag
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => tags
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => WP_REST_Terms_Controller
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [nav_menu] => WP_Taxonomy Object
+        (
+            [name] => nav_menu
+            [label] => Меню навигации
+            [labels] => stdClass Object
+                (
+                    [name] => Меню навигации
+                    [singular_name] => Меню навигации
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Меню навигации
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Меню навигации
+                    [name_admin_bar] => Меню навигации
+                    [archives] => Меню навигации
+                )
+
+            [description] => 
+            [public] => 
+            [publicly_queryable] => 
+            [hierarchical] => 
+            [show_ui] => 
+            [show_in_menu] => 
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 
+            [show_in_quick_edit] => 
+            [show_admin_column] => 
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => nav_menu_item
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => edit_theme_options
+                    [edit_terms] => edit_theme_options
+                    [delete_terms] => edit_theme_options
+                    [assign_terms] => edit_theme_options
+                )
+
+            [rewrite] => 
+            [query_var] => 
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => menus
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => WP_REST_Menus_Controller
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [link_category] => WP_Taxonomy Object
+        (
+            [name] => link_category
+            [label] => Рубрики ссылок
+            [labels] => stdClass Object
+                (
+                    [name] => Рубрики ссылок
+                    [singular_name] => Рубрика ссылок
+                    [search_items] => Поиск рубрик ссылок
+                    [popular_items] => 
+                    [all_items] => Все рубрики ссылок
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить рубрику ссылок
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить рубрику ссылок
+                    [add_new_item] => Добавить новую рубрику ссылок
+                    [new_item_name] => Название новой рубрики ссылок
+                    [separate_items_with_commas] => 
+                    [add_or_remove_items] => 
+                    [choose_from_most_used] => 
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к категориям ссылок
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Рубрики ссылок
+                    [name_admin_bar] => Рубрика ссылок
+                    [archives] => Все рубрики ссылок
+                )
+
+            [description] => 
+            [public] => 
+            [publicly_queryable] => 
+            [hierarchical] => 
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => link
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_links
+                    [edit_terms] => manage_links
+                    [delete_terms] => manage_links
+                    [assign_terms] => manage_links
+                )
+
+            [rewrite] => 
+            [query_var] => 
+            [update_count_callback] => 
+            [show_in_rest] => 
+            [rest_base] => 
+            [rest_namespace] => 
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [post_format] => WP_Taxonomy Object
+        (
+            [name] => post_format
+            [label] => Форматы
+            [labels] => stdClass Object
+                (
+                    [name] => Форматы
+                    [singular_name] => Формат
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Форматы
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Форматы
+                    [name_admin_bar] => Формат
+                    [archives] => Форматы
+                )
+
+            [description] => 
+            [public] => 1
+            [publicly_queryable] => 1
+            [hierarchical] => 
+            [show_ui] => 
+            [show_in_menu] => 
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 
+            [show_in_quick_edit] => 
+            [show_admin_column] => 
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => post
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => Array
+                (
+                    [with_front] => 1
+                    [hierarchical] => 
+                    [ep_mask] => 0
+                    [slug] => type
+                )
+
+            [query_var] => post_format
+            [update_count_callback] => 
+            [show_in_rest] => 
+            [rest_base] => 
+            [rest_namespace] => 
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [wp_theme] => WP_Taxonomy Object
+        (
+            [name] => wp_theme
+            [label] => Темы
+            [labels] => stdClass Object
+                (
+                    [name] => Темы
+                    [singular_name] => Тема
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Темы
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Темы
+                    [name_admin_bar] => Тема
+                    [archives] => Темы
+                )
+
+            [description] => 
+            [public] => 
+            [publicly_queryable] => 
+            [hierarchical] => 
+            [show_ui] => 
+            [show_in_menu] => 
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 
+            [show_in_quick_edit] => 
+            [show_admin_column] => 
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => wp_template
+                    [1] => wp_template_part
+                    [2] => wp_global_styles
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => 
+            [query_var] => 
+            [update_count_callback] => 
+            [show_in_rest] => 
+            [rest_base] => 
+            [rest_namespace] => 
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [wp_template_part_area] => WP_Taxonomy Object
+        (
+            [name] => wp_template_part_area
+            [label] => Области частей шаблона
+            [labels] => stdClass Object
+                (
+                    [name] => Области частей шаблона
+                    [singular_name] => Область части шаблона
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Области частей шаблона
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Области частей шаблона
+                    [name_admin_bar] => Область части шаблона
+                    [archives] => Области частей шаблона
+                )
+
+            [description] => 
+            [public] => 
+            [publicly_queryable] => 
+            [hierarchical] => 
+            [show_ui] => 
+            [show_in_menu] => 
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 
+            [show_in_quick_edit] => 
+            [show_admin_column] => 
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => wp_template_part
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => 
+            [query_var] => 
+            [update_count_callback] => 
+            [show_in_rest] => 
+            [rest_base] => 
+            [rest_namespace] => 
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [wp_pattern_category] => WP_Taxonomy Object
+        (
+            [name] => wp_pattern_category
+            [label] => Рубрики паттернов
+            [labels] => stdClass Object
+                (
+                    [name] => Рубрики паттернов
+                    [singular_name] => Рубрика паттерна
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Рубрики паттернов
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Рубрики паттернов
+                    [name_admin_bar] => Рубрика паттерна
+                    [archives] => Рубрики паттернов
+                )
+
+            [description] => 
+            [public] => 
+            [publicly_queryable] => 
+            [hierarchical] => 
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 1
+            [meta_box_cb] => post_tags_meta_box
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => wp_block
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => 
+            [query_var] => 
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => 
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 1
+        )
+
+    [lfm_card_item_type] => WP_Taxonomy Object
+        (
+            [name] => lfm_card_item_type
+            [label] => Вид изделия
+            [labels] => stdClass Object
+                (
+                    [name] => Вид изделия
+                    [singular_name] => Вид
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Вид изделия
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Вид изделия
+                    [name_admin_bar] => Вид
+                    [archives] => Вид изделия
+                )
+
+            [description] => 
+            [public] => 1
+            [publicly_queryable] => 1
+            [hierarchical] => 
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 1
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 1
+            [meta_box_cb] => Array
+                (
+                    [0] => LFManagement Object
+                        (
+                            [default_data_structure:protected] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [post_type_name] => _obligatory
+                                            [post_type_args] => Array
+                                                (
+                                                    [public] => true
+                                                    [label] => post_label_template
+                                                    [show_ui] => 1
+                                                    [show_in_menu] => lfmanagement/lfm_menu.php
+                                                    [has_archive] => 1
+                                                    [support] => Array
+                                                        (
+                                                            [0] => title
+                                                            [1] => author
+                                                            [2] => custom-fields
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [taxonomy] => Array
+                                        (
+                                            [taxonomy_name] => _obligatory
+                                            [parent_objec_type] => _obligatory
+                                            [taxonomy_args] => Array
+                                                (
+                                                    [hierarchical] => 
+                                                    [labels] => Array
+                                                        (
+                                                            [name] => _obligatory
+                                                        )
+
+                                                    [show_ui] => 1
+                                                    [show_admin_column] => 1
+                                                    [query_var] => 1
+                                                    [show_in_menu] => 1
+                                                    [show_in_rest] => 1
+                                                    [meta_box_cb] => lfm_default_select_meta_box__render
+                                                )
+
+                                        )
+
+                                    [meta] => Array
+                                        (
+                                            [object_type] => _obligatory
+                                            [meta_key] => _obligatory
+                                            [meta_args] => Array
+                                                (
+                                                    [type] => string
+                                                    [description] => deault_meta_field
+                                                    [single] => 1
+                                                    [sanitize_callback] => 
+                                                    [auth_callback] => 
+                                                    [show_in_rest] => 1
+                                                )
+
+                                        )
+
+                                )
+
+                            [data_structure:protected] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => lfm_default_select_meta_box__render
+                )
+
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => lfm_card
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => Array
+                (
+                    [with_front] => 1
+                    [hierarchical] => 
+                    [ep_mask] => 0
+                    [0] => 
+                    [slug] => lfm_card_item_type
+                )
+
+            [query_var] => lfm_card_item_type
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => 
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 
+        )
+
+    [lfm_card_age_rating] => WP_Taxonomy Object
+        (
+            [name] => lfm_card_age_rating
+            [label] => Возрастные ограничения
+            [labels] => stdClass Object
+                (
+                    [name] => Возрастные ограничения
+                    [singular_name] => Возрастная группа
+                    [search_items] => Поиск меток
+                    [popular_items] => Популярные метки
+                    [all_items] => Возрастные ограничения
+                    [parent_item] => 
+                    [parent_item_colon] => 
+                    [name_field_description] => Название определяет, как элемент будет отображаться на вашем сайте.
+                    [slug_field_description] => &laquo;Ярлык&raquo; &#8212; это вариант названия, подходящий для URL. Обычно содержит только латинские буквы в нижнем регистре, цифры и дефисы.
+                    [parent_field_description] => 
+                    [desc_field_description] => Описание по умолчанию не отображается, однако некоторые темы могут его показывать.
+                    [edit_item] => Изменить метку
+                    [view_item] => Просмотреть метку
+                    [update_item] => Обновить метку
+                    [add_new_item] => Добавить новую метку
+                    [new_item_name] => Название новой метки
+                    [separate_items_with_commas] => Метки разделяются запятыми
+                    [add_or_remove_items] => Добавить или удалить метки
+                    [choose_from_most_used] => Выбрать из часто используемых меток
+                    [not_found] => Меток не найдено.
+                    [no_terms] => Меток нет
+                    [filter_by_item] => 
+                    [items_list_navigation] => Навигация по списку меток
+                    [items_list] => Список меток
+                    [most_used] => Часто используемые
+                    [back_to_items] => &larr; Перейти к меткам
+                    [item_link] => Ссылка метки
+                    [item_link_description] => Ссылка на метку.
+                    [menu_name] => Возрастные ограничения
+                    [name_admin_bar] => Возрастная группа
+                    [archives] => Возрастные ограничения
+                )
+
+            [description] => 
+            [public] => 1
+            [publicly_queryable] => 1
+            [hierarchical] => 
+            [show_ui] => 1
+            [show_in_menu] => 1
+            [show_in_nav_menus] => 1
+            [show_tagcloud] => 1
+            [show_in_quick_edit] => 1
+            [show_admin_column] => 1
+            [meta_box_cb] => Array
+                (
+                    [0] => LFManagement Object
+                        (
+                            [default_data_structure:protected] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [post_type_name] => _obligatory
+                                            [post_type_args] => Array
+                                                (
+                                                    [public] => true
+                                                    [label] => post_label_template
+                                                    [show_ui] => 1
+                                                    [show_in_menu] => lfmanagement/lfm_menu.php
+                                                    [has_archive] => 1
+                                                    [support] => Array
+                                                        (
+                                                            [0] => title
+                                                            [1] => author
+                                                            [2] => custom-fields
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [taxonomy] => Array
+                                        (
+                                            [taxonomy_name] => _obligatory
+                                            [parent_objec_type] => _obligatory
+                                            [taxonomy_args] => Array
+                                                (
+                                                    [hierarchical] => 
+                                                    [labels] => Array
+                                                        (
+                                                            [name] => _obligatory
+                                                        )
+
+                                                    [show_ui] => 1
+                                                    [show_admin_column] => 1
+                                                    [query_var] => 1
+                                                    [show_in_menu] => 1
+                                                    [show_in_rest] => 1
+                                                    [meta_box_cb] => lfm_default_select_meta_box__render
+                                                )
+
+                                        )
+
+                                    [meta] => Array
+                                        (
+                                            [object_type] => _obligatory
+                                            [meta_key] => _obligatory
+                                            [meta_args] => Array
+                                                (
+                                                    [type] => string
+                                                    [description] => deault_meta_field
+                                                    [single] => 1
+                                                    [sanitize_callback] => 
+                                                    [auth_callback] => 
+                                                    [show_in_rest] => 1
+                                                )
+
+                                        )
+
+                                )
+
+                            [data_structure:protected] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => lfm_default_select_meta_box__render
+                )
+
+            [meta_box_sanitize_cb] => taxonomy_meta_box_sanitize_cb_input
+            [object_type] => Array
+                (
+                    [0] => lfm_card
+                )
+
+            [cap] => stdClass Object
+                (
+                    [manage_terms] => manage_categories
+                    [edit_terms] => manage_categories
+                    [delete_terms] => manage_categories
+                    [assign_terms] => edit_posts
+                )
+
+            [rewrite] => Array
+                (
+                    [with_front] => 1
+                    [hierarchical] => 
+                    [ep_mask] => 0
+                    [0] => 
+                    [slug] => lfm_card_age_rating
+                )
+
+            [query_var] => lfm_card_age_rating
+            [update_count_callback] => 
+            [show_in_rest] => 1
+            [rest_base] => 
+            [rest_namespace] => wp/v2
+            [rest_controller_class] => 
+            [rest_controller] => 
+            [default_term] => 
+            [sort] => 
+            [args] => 
+            [_builtin] => 
+        )
+
+)
+зис
+LFManagement Object
+(
+    [default_data_structure:protected] => Array
+        (
+            [post] => Array
+                (
+                    [post_type_name] => _obligatory
+                    [post_type_args] => Array
+                        (
+                            [public] => true
+                            [label] => post_label_template
+                            [show_ui] => 1
+                            [show_in_menu] => lfmanagement/lfm_menu.php
+                            [has_archive] => 1
+                            [support] => Array
+                                (
+                                    [0] => title
+                                    [1] => author
+                                    [2] => custom-fields
+                                )
+
+                        )
+
+                )
+
+            [taxonomy] => Array
+                (
+                    [taxonomy_name] => _obligatory
+                    [parent_objec_type] => _obligatory
+                    [taxonomy_args] => Array
+                        (
+                            [hierarchical] => 
+                            [labels] => Array
+                                (
+                                    [name] => _obligatory
+                                )
+
+                            [show_ui] => 1
+                            [show_admin_column] => 1
+                            [query_var] => 1
+                            [show_in_menu] => 1
+                            [show_in_rest] => 1
+                            [meta_box_cb] => lfm_default_select_meta_box__render
+                        )
+
+                )
+
+            [meta] => Array
+                (
+                    [object_type] => _obligatory
+                    [meta_key] => _obligatory
+                    [meta_args] => Array
+                        (
+                            [type] => string
+                            [description] => deault_meta_field
+                            [single] => 1
+                            [sanitize_callback] => 
+                            [auth_callback] => 
+                            [show_in_rest] => 1
+                        )
+
+                )
+
+        )
+
+    [data_structure:protected] => Array
+        (
+        )
+
+)
+
+зис
+LFManagement Object
+(
+    [default_data_structure:protected] => Array
+        (
+            [post] => Array
+                (
+                    [post_type_name] => _obligatory
+                    [post_type_args] => Array
+                        (
+                            [public] => true
+                            [label] => post_label_template
+                            [show_ui] => 1
+                            [show_in_menu] => lfmanagement/lfm_menu.php
+                            [has_archive] => 1
+                            [support] => Array
+                                (
+                                    [0] => title
+                                    [1] => author
+                                    [2] => custom-fields
+                                )
+
+                        )
+
+                )
+
+            [taxonomy] => Array
+                (
+                    [taxonomy_name] => _obligatory
+                    [parent_objec_type] => _obligatory
+                    [taxonomy_args] => Array
+                        (
+                            [hierarchical] => 
+                            [labels] => Array
+                                (
+                                    [name] => _obligatory
+                                )
+
+                            [show_ui] => 1
+                            [show_admin_column] => 1
+                            [query_var] => 1
+                            [show_in_menu] => 1
+                            [show_in_rest] => 1
+                            [meta_box_cb] => lfm_default_select_meta_box__render
+                        )
+
+                )
+
+            [meta] => Array
+                (
+                    [object_type] => _obligatory
+                    [meta_key] => _obligatory
+                    [meta_args] => Array
+                        (
+                            [type] => string
+                            [description] => deault_meta_field
+                            [single] => 1
+                            [sanitize_callback] => 
+                            [auth_callback] => 
+                            [show_in_rest] => 1
+                        )
+
+                )
+
+        )
+
+    [data_structure:protected] => Array
+        (
+        )
+
+)
+

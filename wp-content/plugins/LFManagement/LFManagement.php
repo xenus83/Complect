@@ -175,6 +175,8 @@ class LFManagement
 		foreach($taxonomies_fields AS $tax_key => $tax_val){
 			if(isset($tax_val['taxonomy_args']['meta_box_cb'])){
 				$tax_val['taxonomy_args']['meta_box_cb'] = [$this, $tax_val['taxonomy_args']['meta_box_cb']];
+				// LFM_core_proc::file_log("зис");
+				// LFM_core_proc::file_log($this);
 			}
 			$ret = register_taxonomy($tax_val['taxonomy_name'], $tax_val['parent_objec_type'], $tax_val['taxonomy_args']);
 			if(is_object($ret))
@@ -289,11 +291,15 @@ class LFManagement
 		self::lfm_render_meta_fields($post,'post','div');
 	}
 
+
 	static function lfm_card_post_data__save($post_id) : void{
 
 //		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )//todo а зачем, может убрать?
 //  		return;
-		
+		// LFM_core_proc::file_log($_POST);
+		GLOBAL $wp_taxonomies;
+		// LFM_core_proc::file_log($wp_taxonomies);
+
 		if(0 < count($_POST))
 		if ( !wp_verify_nonce( $_POST['lfm_card_wpnonce'], plugin_basename( __FILE__ ) ) )
 			return;
@@ -400,8 +406,6 @@ class LFManagement
 		{
 			if(!str_contains($val, 'lfm_')) { unset($post_types[$key]); }
 		}
-
-	//		console_log( self::class, $post_types, 0, "post_types" );
 
 		$posts = array();
 		$posts_args = ['numberposts' => -1, 'post_type' => $post_types];
@@ -548,6 +552,7 @@ class LFManagement
 	static function lfm_save_post_meta_data( $object_id ) : int {
 		return self::lfm_save_meta_data('post', $object_id);
 	}
+
 	static function lfm_save_meta_data($type, $object_id ) : int {
 
 		GLOBAL $wp_meta_keys;
@@ -607,6 +612,12 @@ class LFManagement
 		}
 		return $object_id;
 	}
+
+	static function lfm_save_post_term_data() : bool
+	{
+		return true;
+	}
+
 }
 
 if(class_exists('lfmanagement')){
