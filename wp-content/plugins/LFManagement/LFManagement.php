@@ -613,8 +613,13 @@ class LFManagement
 		return $object_id;
 	}
 
-	static function lfm_save_post_term_data() : bool
+	static function lfm_save_post_term_data($post_ID) : bool
 	{
+		$post_type = get_post_type($post_ID());   
+   		$taxonomies = get_object_taxonomies($post_type);  
+		foreach($taxonomies AS $tax_id => $tax_val){
+			
+		}
 		return true;
 	}
 
