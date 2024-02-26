@@ -364,6 +364,8 @@ class LFManagement
 				esc_attr( $_POST['lfm_card__resume'] ) );
 		}
 
+		 self::lfm_save_post_term_data($post_id);
+
 //		file_put_contents(__DIR__ . '/log.log', print_r($_POST,true) . PHP_EOL, FILE_APPEND);
         if( isset( $_POST['lfm_card_age_rating'] ) ){
 	        $rating = sanitize_text_field( $_POST['lfm_card_age_rating'] );
@@ -383,6 +385,7 @@ class LFManagement
 				$term = get_term_by('name', $item_type, 'lfm_card_item_type');
 				if(!empty( $term ) && !is_wp_error( $term )){
 					wp_set_object_terms( $post_id, $term->term_id, 'lfm_card_item_type', false);
+					
 				} 
 			}
 		}
@@ -615,10 +618,18 @@ class LFManagement
 
 	static function lfm_save_post_term_data($post_ID) : bool
 	{
-		$post_type = get_post_type($post_ID());   
+		$post_type = get_post_type($post_ID);   
    		$taxonomies = get_object_taxonomies($post_type);  
-		foreach($taxonomies AS $tax_id => $tax_val){
-			
+		foreach($taxonomies AS $tax_id => $tax_name){
+			if( isset( $_POST[$tax_name] ) ){
+				$value = sanitize_text_field( $_POST[$tax_name] );
+				if (! empty( $value ) ) {
+					$term = get_term_by( 'name', $value, $tax_name );
+					if ( ! empty( $term ) && ! is_wp_error( $term ) ) {
+						wp_set_object_terms( $post_ID, $term->term_id, $tax_name, false );
+					}
+				}
+			}
 		}
 		return true;
 	}

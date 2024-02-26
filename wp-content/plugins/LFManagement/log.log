@@ -1174,3 +1174,12 @@ LFManagement Object
 
 )
 
+post_type:
+lfm_card
+tax:
+Array
+(
+    [0] => lfm_card_item_type
+    [1] => lfm_card_age_rating
+)
+
