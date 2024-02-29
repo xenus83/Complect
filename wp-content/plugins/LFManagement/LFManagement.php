@@ -38,17 +38,15 @@ class LFManagement
 	function __construct() {
 		add_action( 'init', [$this,'lfm_register_script'] );
 		add_action( 'init',[$this, 'create_data_types'] );
+		add_action( 'wp_enqueue_scripts', [$this, 'lfm_enqueue_css'] );
+		add_action( 'admin_enqueue_scripts', [$this, 'lfm_enqueue_css'] );
 		add_action( 'admin_menu', [$this,'add_lfm_menu_page'] );
 		// add_action( 'init', [$this,'lfm_card_taxonomies'] );
 		add_action( 'add_meta_boxes_lfm_card', [$this, 'add_card_meta_box'] );
 		add_action( 'add_meta_boxes_lfm_author', [$this, 'add_author_meta_box'] );
-		add_action( 'save_post_lfm_card', [$this, 'lfm_card_post_data__save'] );
-		add_action( 'save_post_lfm_author', [$this, 'lfm_save_post_meta_data'] );
-		add_action( 'wp_enqueue_scripts', [$this, 'lfm_enqueue_css'] );
-		add_action( 'admin_enqueue_scripts', [$this, 'lfm_enqueue_css'] );
+		add_action( 'save_post', [$this, 'lfm_save_post_meta_data'] );
 		add_action( 'lfm_card_item_type_edit_form_fields',[$this, 'lfm_render_term_meta_fields__tr'] );
 		add_action( 'lfm_card_item_type_add_form_fields',[$this, 'lfm_render_term_meta_fields__div'] );
-
 		add_action( "create_lfm_card_item_type", [$this, 'lfm_save_term_meta_data' ] );
 		add_action( "edited_lfm_card_item_type", [$this, 'lfm_save_term_meta_data' ] );
 	}
@@ -60,7 +58,6 @@ class LFManagement
 
 	static function activation() : void {
 		self::create_lfm_roles();
-
 		flush_rewrite_rules();
 	}
 
@@ -279,117 +276,16 @@ class LFManagement
 
 
 	function add_card_meta_box($post) : void{
-		add_meta_box('lfm_card_meta_box', esc_html__('Данные карточки', 'lfmanagement'), [$this,'lfm_card_meta_box__render'],'lfm_Card');
+		add_meta_box('lfm_card_meta_box', esc_html__('Данные карточки', 'lfmanagement'), [$this,'lfm_card_meta_box__render'],'lfm_card');
 	}
 	function add_author_meta_box($post) : void{
-		add_meta_box('lfm_author_meta_box', esc_html__('Данные автора', 'lfmanagement'), [$this,'lfm_post_fields_meta_box__render'],'lfm_Author');
+		add_meta_box('lfm_author_meta_box', esc_html__('Данные автора', 'lfmanagement'), [$this,'lfm_post_fields_meta_box__render'],'lfm_author');
 	}
 	static function lfm_post_fields_meta_box__render($post) : void{
 		self::lfm_render_meta_fields($post,'post','div');
 	}
 	static function lfm_card_meta_box__render($post) : void{
 		self::lfm_render_meta_fields($post,'post','div');
-	}
-
-
-	static function lfm_card_post_data__save($post_id) : void{
-
-//		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )//todo а зачем, может убрать?
-//  		return;
-		// LFM_core_proc::file_log($_POST);
-		GLOBAL $wp_taxonomies;
-		// LFM_core_proc::file_log($wp_taxonomies);
-
-		if(0 < count($_POST))
-		if ( !wp_verify_nonce( $_POST['lfm_card_wpnonce'], plugin_basename( __FILE__ ) ) )
-			return;
-
-		if ( !current_user_can( 'edit_post', $post_id ) )
-			return;
-
-		if( isset( $_POST['lfm_card__isbn'] ) ){
-			update_post_meta( $post_id,'lfm_card__isbn',
-				esc_attr( $_POST['lfm_card__isbn'] ) );
-		}
-		if( isset( $_POST['lfm_card__year'] ) ){
-			update_post_meta( $post_id,'lfm_card__year',
-				esc_attr( $_POST['lfm_card__year'] ) );
-		}
-        if( isset( $_POST['lfm_card__cost'] ) ){
-			update_post_meta( $post_id,'lfm_card__cost',
-				esc_attr( $_POST['lfm_card__cost'] ) );
-		}
-		if( isset( $_POST['lfm_card__title_info'] ) ){
-			update_post_meta( $post_id,'lfm_card__title_info',
-				esc_attr( $_POST['lfm_card__title_info'] ) );
-		}
-        if( isset( $_POST['lfm_card__volume_p'] ) ){
-			update_post_meta( $post_id,'lfm_card__volume_p',
-				esc_attr( $_POST['lfm_card__volume_p'] ) );
-		}
-        if( isset( $_POST['lfm_card__otv_info'] ) ){
-			update_post_meta( $post_id,'lfm_card__otv_info',
-				esc_attr( $_POST['lfm_card__otv_info'] ) );
-		}
-        if( isset( $_POST['lfm_card__izd_info'] ) ){
-			update_post_meta( $post_id,'lfm_card__izd_info',
-				esc_attr( $_POST['lfm_card__izd_info'] ) );
-		}
-        if( isset( $_POST['lfm_card__publishing_place'] ) ) {
-	        update_post_meta( $post_id, 'lfm_card__publishing_place',
-		        esc_attr( $_POST['lfm_card__publishing_place'] ) );
-        }
-        if( isset( $_POST['lfm_card__publishing_house'] ) ){
-			update_post_meta( $post_id,'lfm_card__publishing_house',
-				esc_attr( $_POST['lfm_card__publishing_house'] ) );
-		}
-        if( isset( $_POST['lfm_card__sys'] ) ){
-			update_post_meta( $post_id,'lfm_card__sys',
-				esc_attr( $_POST['lfm_card__sys'] ) );
-		}
-        if( isset( $_POST['lfm_card__osnzaglser'] ) ){
-			update_post_meta( $post_id,'lfm_card__osnzaglser',
-				esc_attr( $_POST['lfm_card__osnzaglser'] ) );
-		}
-        if( isset( $_POST['lfm_card__osnzaglser'] ) ){
-			update_post_meta( $post_id,'lfm_card__osnzaglser',
-				esc_attr( $_POST['lfm_card__osnzaglser'] ) );
-		}
-        if( isset( $_POST['lfm_card__note'] ) ){
-			update_post_meta( $post_id,'lfm_card__note',
-				esc_attr( $_POST['lfm_card__note'] ) );
-		}
-        if( isset( $_POST['lfm_card__resume'] ) ){
-			update_post_meta( $post_id,'lfm_card__resume',
-				esc_attr( $_POST['lfm_card__resume'] ) );
-		}
-
-		 self::lfm_save_post_term_data($post_id);
-
-//		file_put_contents(__DIR__ . '/log.log', print_r($_POST,true) . PHP_EOL, FILE_APPEND);
-        if( isset( $_POST['lfm_card_age_rating'] ) ){
-	        $rating = sanitize_text_field( $_POST['lfm_card_age_rating'] );
-
-	        if (! empty( $rating ) ) {
-                $term = get_term_by( 'name', $rating, 'lfm_card_age_rating' );
-                if ( ! empty( $term ) && ! is_wp_error( $term ) ) {
-                    wp_set_object_terms( $post_id, $term->term_id, 'lfm_card_age_rating', false );
-                }
-	        }
-        }
-
-		if( isset( $_POST['lfm_card_item_type'])){
-			$item_type = sanitize_text_field($_POST['lfm_card_item_type']);
-			if(!empty($item_type))
-			{
-				$term = get_term_by('name', $item_type, 'lfm_card_item_type');
-				if(!empty( $term ) && !is_wp_error( $term )){
-					wp_set_object_terms( $post_id, $term->term_id, 'lfm_card_item_type', false);
-					
-				} 
-			}
-		}
-
 	}
 
 	static function remove_plugin_data() : void {
@@ -559,18 +455,23 @@ class LFManagement
 	static function lfm_save_meta_data($type, $object_id ) : int {
 
 		GLOBAL $wp_meta_keys;
-
+		// [post_type] => lfm_author
 		if(!count($_POST)) return 0;
 		if ( 'post' != $type && 'term' != $type ) return 0;
 
 		if ( ! current_user_can('edit_'.$type, $object_id) ) return 0;
 
+
 		if('term' == $type){
+			if(!isset($_POST['taxonomy'])) return 0;
+			if(!str_starts_with($_POST['taxonomy'], 'lfm_')) return 0;
 			$check1 = ! wp_verify_nonce( $_POST['_wpnonce'], "update-tag_$object_id" ) && // wp_nonce_field( 'update-tag_' . $tag_ID );
 				! wp_verify_nonce( $_POST['_wpnonce_add-tag'], "add-tag" ); // wp_nonce_field('add-tag', '_wpnonce_add-tag');
 			if($check1) return 0;
 			}
 		if('post' == $type) {
+			if(!isset($_POST['post_type'])) return 0;
+			if(!str_starts_with($_POST['post_type'], 'lfm_')) return 0;
 			$check2 = ! wp_verify_nonce( $_POST[ $_POST['post_type'] . '_wpnonce' ], plugin_basename( __FILE__ ) );
 			if($check2) return 0;
 		}
@@ -580,8 +481,8 @@ class LFManagement
 			 $meta_fields = $wp_meta_keys['term'][$_POST['taxonomy']];
 		}
 		if ( 'post' == $type ){
-
 			$meta_fields = $wp_meta_keys['post'][$_POST['post_type']];
+			self::lfm_save_post_term_data($object_id);
 		}
 
 		foreach ($meta_fields AS $meta_field_key=>$meta_field){

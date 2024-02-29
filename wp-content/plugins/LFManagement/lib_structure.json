@@ -176,7 +176,7 @@
                                               ,"meta_args": {
                                                             "type" : "string"
                                                           ,"object_subtype" : "lfm_author"
-                                                          ,"description" : "Фамилия"
+                                                          ,"description" : "Отчество"
                                                       }
                         }
                         ,"lfm_author__birth_date" : {

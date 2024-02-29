@@ -9946,6 +9946,7 @@ msgid "Plugins extend and expand the functionality of WordPress. You may install
 msgstr "Плагины расширяют и дополняют функциональность WordPress. Можно установить их из <a href=\"%s\">каталога плагинов WordPress</a> автоматически, либо загрузить архив плагина в формате .zip, нажав на кнопку в верхней части страницы."
 
 #. Plugin URI of the plugin
+#: hello.php
 msgid "http://wordpress.org/plugins/hello-dolly/"
 msgstr "http://wordpress.org/plugins/hello-dolly/"
 
@@ -10809,14 +10810,17 @@ msgid "Add New Comment"
 msgstr "Добавить комментарий"
 
 #. Author URI of the plugin
+#: hello.php
 msgid "http://ma.tt/"
 msgstr "http://ma.tt/"
 
 #. Description of the plugin
+#: hello.php
 msgid "This is not just a plugin, it symbolizes the hope and enthusiasm of an entire generation summed up in two words sung most famously by Louis Armstrong: Hello, Dolly. When activated you will randomly see a lyric from <cite>Hello, Dolly</cite> in the upper right of your admin screen on every page."
 msgstr "Это не просто плагин, он символизирует надежду и энтузиазм целого поколения, выраженные в двух словах из песни, наиболее известной в исполнении Луиса Армстронга: &laquo;Hello, Dolly&raquo;. После активации плагина на каждой странице панели управления в правом верхнем углу будет отображаться случайная строка из этой песни."
 
 #. Plugin Name of the plugin
+#: hello.php
 msgid "Hello Dolly"
 msgstr "Hello Dolly"
 
