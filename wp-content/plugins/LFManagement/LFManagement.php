@@ -42,8 +42,8 @@ class LFManagement
 		add_action( 'admin_enqueue_scripts', [$this, 'lfm_enqueue_css'] );
 		add_action( 'admin_menu', [$this,'add_lfm_menu_page'] );
 		// add_action( 'init', [$this,'lfm_card_taxonomies'] );
-		add_action( 'add_meta_boxes_lfm_card', [$this, 'add_card_meta_box'] );
-		add_action( 'add_meta_boxes_lfm_author', [$this, 'add_author_meta_box'] );
+		add_action( 'add_meta_boxes_lfm_card', [$this, 'add_card_meta_box'] ); //
+		add_action( 'add_meta_boxes_lfm_author', [$this, 'add_author_meta_box'] );//
 		add_action( 'save_post', [$this, 'lfm_save_post_meta_data'] );
 		add_action( 'lfm_card_item_type_edit_form_fields',[$this, 'lfm_render_term_meta_fields__tr'] );
 		add_action( 'lfm_card_item_type_add_form_fields',[$this, 'lfm_render_term_meta_fields__div'] );
@@ -328,6 +328,7 @@ class LFManagement
 		}
 	}
 
+	//вывод метабокса для таксономии
 	static function lfm_default_meta_box__render($post, $params, $output_type) : void{
 
         $template_dir = plugin_dir_path(__FILE__)."templates/";
@@ -363,6 +364,8 @@ class LFManagement
 	static function lfm_render_term_meta_fields__tr($var1) : void{
 		self::lfm_render_meta_fields($var1,'term', 'tr');
 	}
+
+	//вывод мета-полей для таксономии или поста
 	static function lfm_render_meta_fields( $object, $object_type = 'post', $output_type = 'div' ) : void {
 		//TODO: убрать закомментированное
 		GLOBAL $wp_meta_keys;
