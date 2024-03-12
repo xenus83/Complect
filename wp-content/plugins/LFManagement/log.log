@@ -1183,3 +1183,134 @@ Array
     [1] => lfm_card_age_rating
 )
 
+object_id^
+129
+POST:
+Array
+(
+    [_wpnonce] => 8b4206691a
+    [_wp_http_referer] => /wp-admin/post.php?post=129&action=edit&message=1
+    [user_ID] => 1
+    [action] => editpost
+    [originalaction] => editpost
+    [post_author] => 1
+    [post_type] => lfm_author
+    [original_post_status] => publish
+    [referredby] => http://komplect.local:8000/wp-admin/post.php?post=129&action=edit
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-admin/post.php?post=129&action=edit
+    [post_ID] => 129
+    [meta-box-order-nonce] => 5b54db274b
+    [closedpostboxesnonce] => 1ffbb582a8
+    [post_title] => М.Ю. Лермонтов
+    [samplepermalinknonce] => 042d40ea2d
+    [wp-preview] => 
+    [hidden_post_status] => publish
+    [post_status] => publish
+    [hidden_post_password] => 
+    [hidden_post_visibility] => public
+    [visibility] => public
+    [post_password] => 
+    [mm] => 04
+    [jj] => 26
+    [aa] => 2023
+    [hh] => 02
+    [mn] => 38
+    [ss] => 23
+    [hidden_mm] => 04
+    [cur_mm] => 02
+    [hidden_jj] => 26
+    [cur_jj] => 28
+    [hidden_aa] => 2023
+    [cur_aa] => 2024
+    [hidden_hh] => 02
+    [cur_hh] => 13
+    [hidden_mn] => 38
+    [cur_mn] => 55
+    [original_publish] => Обновить
+    [save] => Обновить
+    [post_name] => м-ю-лермонтов
+    [lfm_author_wpnonce] => f0b181246c
+    [lfm_author__family_name] => Лермонтов
+    [lfm_author__name] => Михаил
+    [lfm_author__father_name] => Юрьевич
+    [lfm_author__birth_date] => 15.09.1814
+    [lfm_author__country_or_language] => Русский
+    [post_mime_type] => 
+    [ID] => 129
+    [comment_status] => closed
+    [ping_status] => closed
+)
+
+POST:
+Array
+(
+    [action] => editedtag
+    [tag_ID] => 10
+    [taxonomy] => lfm_card_item_type
+    [_wp_original_http_referer] => http://komplect.local:8000/wp-admin/edit-tags.php?taxonomy=lfm_card_item_type&post_type=lfm_card
+    [_wpnonce] => 3bf7d7dcbe
+    [_wp_http_referer] => /wp-admin/term.php?taxonomy=lfm_card_item_type&tag_ID=10&post_type=lfm_card&wp_http_referer=%2Fwp-admin%2Fedit-tags.php%3Ftaxonomy%3Dlfm_card_item_type%26post_type%3Dlfm_card
+    [name] => Компакт-диск
+    [slug] => optical_disck
+    [description] => Оптический диск CD/DVD/Blue-ray
+    [lfm_card_item_type_wpnonce] => f0b181246c
+    [lfm_card_item_type__acc_unit] => MB
+    [lfm_card_item_type__favorite] => lfm_card_item_type__favorite
+)
+
+WP_Post Object
+(
+    [ID] => 132
+    [post_author] => 1
+    [post_date] => 2024-02-29 02:10:59
+    [post_date_gmt] => 2024-02-29 02:10:59
+    [post_content] => 
+    [post_title] => test3
+    [post_excerpt] => 
+    [post_status] => publish
+    [comment_status] => closed
+    [ping_status] => closed
+    [post_password] => 
+    [post_name] => test3
+    [to_ping] => 
+    [pinged] => 
+    [post_modified] => 2024-02-29 02:10:59
+    [post_modified_gmt] => 2024-02-29 02:10:59
+    [post_content_filtered] => 
+    [post_parent] => 0
+    [guid] => http://Komplect.local:8000/?post_type=lfm_card&#038;p=132
+    [menu_order] => 0
+    [post_type] => lfm_card
+    [post_mime_type] => 
+    [comment_count] => 0
+    [filter] => edit
+)
+
+WP_Post Object
+(
+    [ID] => 129
+    [post_author] => 1
+    [post_date] => 2023-04-26 02:38:23
+    [post_date_gmt] => 2023-04-26 02:38:23
+    [post_content] => 
+    [post_title] => М.Ю. Лермонтов
+    [post_excerpt] => 
+    [post_status] => publish
+    [comment_status] => closed
+    [ping_status] => closed
+    [post_password] => 
+    [post_name] => %d0%bc-%d1%8e-%d0%bb%d0%b5%d1%80%d0%bc%d0%be%d0%bd%d1%82%d0%be%d0%b2
+    [to_ping] => 
+    [pinged] => 
+    [post_modified] => 2024-02-28 13:56:11
+    [post_modified_gmt] => 2024-02-28 13:56:11
+    [post_content_filtered] => 
+    [post_parent] => 0
+    [guid] => http://Komplect.local:8000/?post_type=lfm_author&#038;p=129
+    [menu_order] => 0
+    [post_type] => lfm_author
+    [post_mime_type] => 
+    [comment_count] => 0
+    [filter] => edit
+)
+
