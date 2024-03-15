@@ -158,17 +158,27 @@ class LFManagement
 
 	private function register_metafields($meta_fields_arr)
 	{
+		GLOBAL $wp_meta_keys;
 		foreach($meta_fields_arr AS $meta_key => $meta_val){
 			$ret = register_meta($meta_val['object_type'], $meta_val['meta_key'], $meta_val['meta_args']);
 			if(is_object($ret))
 			if('WP_Error' == get_class($ret)){
 				LFM_core_proc::file_log($ret);
 			}
+			else{
+				if(isset($meta_val['additional_fields'])){
+					if(isset($wp_meta_keys[$meta_val['meta_key']]))
+					$wp_meta_keys[$meta_val['meta_key']]['additional_fields']= $meta_val['additional_fields'];
+					;
+				}
+				
+			}
 		}
 	}
 
 	private function register_taxonomies($taxonomies_fields)
-	{
+	{		
+		GLOBAL $wp_taxonomies;
 		foreach($taxonomies_fields AS $tax_key => $tax_val){
 			if(isset($tax_val['taxonomy_args']['meta_box_cb'])){
 				$tax_val['taxonomy_args']['meta_box_cb'] = [$this, $tax_val['taxonomy_args']['meta_box_cb']];
@@ -180,13 +190,22 @@ class LFManagement
 			if('WP_Error' == get_class($ret)){
 				LFM_core_proc::file_log($ret);
 			}
-			if(isset($tax_val['meta'])){
-				$this->register_metafields($tax_val['meta']);
+			else{
+				if(isset($tax_val['additional_fields']))
+					if(isset($wp_taxonomies[$tax_val['taxonomy_name']]))
+					{
+						$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
+					}
+				if(isset($tax_val['meta'])){
+					$this->register_metafields($tax_val['meta']);
+				}
 			}
 		}
 	}
 
 	private function make_objects_structure() : void {
+
+		GLOBAL $wp_post_types;
 		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
 		if(1 === $this->default_data_structure) return; //TODO может что-то вывести пользователю?
 
@@ -225,9 +244,17 @@ class LFManagement
 			if('WP_Error' == get_class($ret)){
 				LFM_core_proc::file_log($ret);
 			}
-			if(isset($ds_val['meta'])){
-				$this->register_metafields($ds_val['meta']);
+			else{
+				if(isset($tax_val['additional_fields']))
+					if(isset($wp_taxonomies[$tax_val['taxonomy_name']]))
+					{
+						$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
+					}
+					if(isset($ds_val['meta'])){
+						$this->register_metafields($ds_val['meta']);
+					}
 			}
+			
 		}
 
 		foreach( $json_data_structure['post'] AS $post_key => $post_val)
@@ -240,8 +267,15 @@ class LFManagement
 			if('WP_Error' == get_class($ret)){
 				LFM_core_proc::file_log($ret);
 			}
-			remove_post_type_support( $post_val['post_type_name'], 'editor'); // удаляем текстовй блок
-			
+			else{
+				remove_post_type_support( $post_val['post_type_name'], 'editor'); // удаляем текстовй блок
+
+				if(isset($wp_post_types[$post_val['post_type_name']]))
+					if(isset($post_val['additiona_fields']))
+					{
+						$wp_post_types[$post_val['post_type_name']]['additiona_fields'] = $post_val['additiona_fields'];
+					}
+			}
 			if(isset($post_val['meta'])){
 				$this->register_metafields($post_val['meta']);
 			}
@@ -402,7 +436,7 @@ class LFManagement
 			die('задан неверный тип объекта');
 		}
 
-		$output_string = wp_nonce_field( plugin_basename( __FILE__ ), $object_class.'_wpnonce',TRUE, FALSE );
+		$output_string = wp_nonce_field( plugin_basename( __FILE__ ), $object_class.'_wpnonce', TRUE, FALSE );
 
 		foreach ( $meta_fields as $meta_field_key => $meta_field ){
 
