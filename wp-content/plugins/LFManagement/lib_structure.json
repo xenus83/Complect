@@ -37,6 +37,9 @@
                                                                                                       ,"description"    : "Избранное"
                                                                                                   }
                                                       }
+                                                }
+                                                ,"additional_fields":{
+                                                  "TEST":"test_TAXONOMY"
                                                 }            
                                             }               
                       ,"lfm_card_age_rating" : {
@@ -67,7 +70,11 @@
                                                                   "type" : "string"
                                                                 ,"object_subtype" : "lfm_card"
                                                                 ,"description" : "Год издания"
-                                                            }            
+                                                            }     
+                                                  ,"additional_fields":{
+                                                    "default_value": "CURRENT_Year"
+                                                  }
+
                               }  
                               ,"lfm_card__volume_p" : {
                                                       "object_type" : "post"
@@ -142,6 +149,9 @@
                                                                 }            
                               }
                     }
+                    ,"additional_fields":{
+                      "TEST" : "test_POST"
+                    }            
     }
     ,"lfm_author" :{
                      "post_type_name" : "lfm_author"
@@ -187,6 +197,9 @@
                                                           ,"object_subtype" : "lfm_author"
                                                           ,"description" : "Дата рождения"
                                                       }
+                                              ,"additional_fields":{
+                                                "format" : "DD-MM-YYYY"
+                                              }
                         }
                         ,"lfm_author__country_or_language" : {
                                                 "object_type" : "post"
