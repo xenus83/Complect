@@ -203,7 +203,8 @@ class LFManagement
 		}
 	}
 
-	private function make_objects_structure() : void {
+	private function make_objects_structure() : void 
+	{
 
 		GLOBAL $wp_post_types;
 		$this->default_data_structure = LFM_core_proc::read_json_file(dirname(__FILE__)."/system/lib_structure_defaults.json");
@@ -241,19 +242,19 @@ class LFManagement
 		foreach( $json_data_structure['taxonomy'] as $ds_key => $ds_val){
 			$ret = register_taxonomy($ds_val['taxonomy_name'], $ds_val['parent_objec_type'], $ds_val['taxonomy_args']);
 			if(is_object($ret))
-			if('WP_Error' == get_class($ret)){
-				LFM_core_proc::file_log($ret);
-			}
-			else{
-				if(isset($tax_val['additional_fields']))
-					if(isset($wp_taxonomies[$tax_val['taxonomy_name']]))
-					{
-						$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
-					}
-					if(isset($ds_val['meta'])){
-						$this->register_metafields($ds_val['meta']);
-					}
-			}
+				if('WP_Error' == get_class($ret)){
+					LFM_core_proc::file_log($ret);
+				}
+				else{
+					if(isset($tax_val['additional_fields']))
+						if(isset($wp_taxonomies[$tax_val['taxonomy_name']]))
+						{
+							$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
+						}
+						if(isset($ds_val['meta'])){
+							$this->register_metafields($ds_val['meta']);
+						}
+				}
 			
 		}
 
@@ -288,11 +289,13 @@ class LFManagement
 	}
 
 
-	function render_lfm_page() : void {
+	function render_lfm_page() : void 
+	{
 		echo "<h1>Настройка плагина lfm Plugin</h1>";
 	}
 
-	function add_lfm_menu_page() : void {
+	function add_lfm_menu_page() : void
+	{
 		add_menu_page( 'Управление комплектованием', 'Комплектование', 'manage_options', 'lfmanagement/lfm_menu.php', [$this,'render_lfm_page']);
 //		$tax_edit_url = edit_term_link( 'Редактировать Вид изделия', '', '', 'lfm_card_item_type', false );
 //		$tax_edit_url = apply_filters( 'edit_tag_link', $tax_edit_url );
@@ -303,26 +306,32 @@ class LFManagement
 	}
 	//TODO: проверить возможность применения wp_nav_menu_item_taxonomy_meta_box
 
-	function create_data_types() : void {
+	function create_data_types() : void
+	{
 		$f = self::make_objects_structure();
 
 	}
 
 
-	function add_card_meta_box($post) : void{
+	function add_card_meta_box($post) : void
+	{
 		add_meta_box('lfm_card_meta_box', esc_html__('Данные карточки', 'lfmanagement'), [$this,'lfm_card_meta_box__render'],'lfm_card');
 	}
-	function add_author_meta_box($post) : void{
+	function add_author_meta_box($post) : void
+	{
 		add_meta_box('lfm_author_meta_box', esc_html__('Данные автора', 'lfmanagement'), [$this,'lfm_post_fields_meta_box__render'],'lfm_author');
 	}
-	static function lfm_post_fields_meta_box__render($post) : void{
+	static function lfm_post_fields_meta_box__render($post) : void
+	{
 		self::lfm_render_meta_fields($post,'post','div');
 	}
-	static function lfm_card_meta_box__render($post) : void{
+	static function lfm_card_meta_box__render($post) : void
+	{
 		self::lfm_render_meta_fields($post,'post','div');
 	}
 
-	static function remove_plugin_data() : void {
+	static function remove_plugin_data() : void
+	{
 		GLOBAL $wpdb;
 		$args = array(
 			'public'   => true,
@@ -363,7 +372,8 @@ class LFManagement
 	}
 
 	//вывод метабокса для таксономии
-	static function lfm_default_meta_box__render($post, $params, $output_type) : void{
+	static function lfm_default_meta_box__render($post, $params, $output_type) : void
+	{
 
         $template_dir = plugin_dir_path(__FILE__)."templates/";
         $params['taxonomy'] = get_taxonomy($params["args"]["taxonomy"]);
@@ -400,7 +410,8 @@ class LFManagement
 	}
 
 	//вывод мета-полей для таксономии или поста
-	static function lfm_render_meta_fields( $object, $object_type = 'post', $output_type = 'div' ) : void {
+	static function lfm_render_meta_fields( $object, $object_type = 'post', $output_type = 'div' ) : void
+	{
 		//TODO: убрать закомментированное
 		GLOBAL $wp_meta_keys;
 		GLOBAL $wp_post_types;
@@ -482,14 +493,17 @@ class LFManagement
 		echo $output_string;
 	}
 
-	static function lfm_save_term_meta_data( $object_id ) : int {
+	static function lfm_save_term_meta_data( $object_id ) : int
+	{
 		return self::lfm_save_meta_data('term', $object_id);
 	}
-	static function lfm_save_post_meta_data( $object_id ) : int {
+	static function lfm_save_post_meta_data( $object_id ) : int
+	{
 		return self::lfm_save_meta_data('post', $object_id);
 	}
 
-	static function lfm_save_meta_data($type, $object_id ) : int {
+	static function lfm_save_meta_data($type, $object_id ) : int
+	{
 
 		GLOBAL $wp_meta_keys;
 		// [post_type] => lfm_author
@@ -574,7 +588,8 @@ class LFManagement
 
 }
 
-if(class_exists('lfmanagement')){
+if(class_exists('lfmanagement'))
+{
 	$lfManagement = new lfmanagement();
 }
 
