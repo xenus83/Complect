@@ -169,6 +169,7 @@ class LFManagement
 				if(isset($meta_val['additional_fields'])){
 					if(isset($wp_meta_keys[$meta_val['meta_key']]))
 					$wp_meta_keys[$meta_val['meta_key']]['additional_fields']= $meta_val['additional_fields'];
+					LFM_core_proc::file_log("test");
 					;
 				}
 				
@@ -194,7 +195,8 @@ class LFManagement
 				if(isset($tax_val['additional_fields']))
 					if(isset($wp_taxonomies[$tax_val['taxonomy_name']]))
 					{
-						$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
+						//$wp_taxonomies[$tax_val['taxonomy_name']] этообъект, не может хранить переделать
+						//$wp_taxonomies[$tax_val['taxonomy_name']]['additional_fields'] = $tax_val['additional_fields'];
 					}
 				if(isset($tax_val['meta'])){
 					$this->register_metafields($tax_val['meta']);
@@ -456,6 +458,11 @@ class LFManagement
 			$params['value'] = ' ';
 			$params['descr'] = ' ';
 			$template = $template_dir;
+
+			if(isset($meta_field['additional_fields']))
+			{
+				 LFM_core_proc::file_log($meta_field['additional_fields']);
+			}
 
 			if( isset( $id ) ) {
 					$params['value'] = get_metadata($object_type, $id, $meta_field_key, true );
