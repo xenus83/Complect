@@ -274,9 +274,9 @@ class LFManagement
 				remove_post_type_support( $post_val['post_type_name'], 'editor'); // удаляем текстовй блок
 
 				if(isset($wp_post_types[$post_val['post_type_name']]))
-					if(isset($post_val['additiona_fields']))
+					if(isset($post_val['additional_fields']))
 					{
-						$wp_post_types[$post_val['post_type_name']]['additiona_fields'] = $post_val['additiona_fields'];
+						$wp_post_types[$post_val['post_type_name']]['additional_fields'] = $post_val['additional_fields'];
 					}
 			}
 			if(isset($post_val['meta'])){
